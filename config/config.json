@@ -4,38 +4,20 @@
     "password": "root",
     "database": "restaurant_db",
     "host": "localhost",
-<<<<<<< HEAD
-=======
-    "port": 3306,
->>>>>>> d100b6031069c214f37ac58fd516a87a84dee48f
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-<<<<<<< HEAD
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
-=======
-    "password": "root",
-    "database": "restaurant_db",
-    "host": "localhost",
-    "port": 3306,
->>>>>>> d100b6031069c214f37ac58fd516a87a84dee48f
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-<<<<<<< HEAD
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-=======
-    "password": "root",
-    "database": "restaurant_db",
-    "host": "localhost",
-    "port": 3306,
->>>>>>> d100b6031069c214f37ac58fd516a87a84dee48f
     "dialect": "mysql"
   }
 }
