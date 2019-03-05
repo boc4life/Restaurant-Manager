@@ -10,8 +10,8 @@ module.exports = function(app) {
     db.User.findAll({
       where: query,
       include: [db.Order]
-    }).then(function(dbOrder) {
-      res.json(dbOrder);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
