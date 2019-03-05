@@ -61,6 +61,10 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     });
+    Order.associate = function(models) {
+      Order.hasMany(models.Pizza);
+      Order.belongsTo(models.User);
+    };
     return Order;
   };
   
