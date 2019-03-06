@@ -14,7 +14,7 @@ module.exports = {
     */
    return queryInterface.bulkInsert('Orders', [{
     type: "Delivery",
-    customer_id: 1,
+    user_id: 1,
     discount: 0,
     subtotal: 20.00,
     tax: 1.20,
@@ -24,7 +24,7 @@ module.exports = {
   },
   {
     type: "Pickup",
-    customer_id: 2,
+    user_id: 2,
     discount: 0,
     subtotal: 40.00,
     tax: 2.40,
@@ -34,7 +34,8 @@ module.exports = {
   },
   {
     type: "In-Store",
-    customer_id: 3,
+    user_id: 3,
+
     discount: 0,
     subtotal: 10.00,
     tax: 0.60,

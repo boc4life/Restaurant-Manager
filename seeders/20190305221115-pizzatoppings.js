@@ -13,28 +13,29 @@ module.exports = {
       }], {});
     */
    return queryInterface.bulkInsert('pizzatoppings', [{
-    IngredientId: 1,
-    PizzaId: 1
+    ingredient_id: 1,
+    pizza_id: 3
   },
   {
-    IngredientId: 2,
-    PizzaId: 2
+    ingredient_id: 2,
+    pizza_id: 4
   },
   {
-    IngredientId: 3,
-    PizzaId: 2
+    ingredient_id: 3,
+    pizza_id: 4
   },
   {
-    IngredientId: 7,
-    PizzaId: 2
+    ingredient_id: 7,
+    pizza_id: 4
   },
   {
-    IngredientId: 1,
-    PizzaId: 3
+    ingredient_id: 1,
+    pizza_id: 5
   },
   {
-    IngredientId: 8,
-    PizzaId: 3
+    ingredient_id: 8,
+    pizza_id: 5
+
   }], {});
   },
 
