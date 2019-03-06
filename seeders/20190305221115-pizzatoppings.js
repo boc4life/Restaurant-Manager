@@ -35,6 +35,7 @@ module.exports = {
   {
     ingredient_id: 8,
     pizza_id: 5
+
   }], {});
   },
 
