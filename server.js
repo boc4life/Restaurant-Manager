@@ -7,6 +7,8 @@ var db = require("./models");
 
 require("./routes/user-api-routes.js")(app);
 require("./routes/order-api-routes.js")(app);
+require("./routes/pizzas-api-routes.js")(app);
+require("./routes/toppings-api-routes.js")(app);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
