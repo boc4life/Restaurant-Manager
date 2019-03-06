@@ -62,5 +62,4 @@ module.exports = function(sequelize, DataTypes) {
       Order.belongsTo(models.User);
     };
     return Order;
-  };
-  
+};

@@ -35,6 +35,7 @@ module.exports = {
   {
     type: "In-Store",
     user_id: 3,
+
     discount: 0,
     subtotal: 10.00,
     tax: 0.60,
