@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     stock_quantity: DataTypes.INTEGER,
     price: DataTypes.INTEGER
-  }, {});
+  }, {underscored: true});
   Ingredient.associate = function(models) {
     Ingredient.belongsToMany(models.Pizza, {through: "PizzaToppings"})
   };

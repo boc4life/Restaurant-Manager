@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
       phone_number: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
         validate: {
           len: [10]
         }
@@ -69,7 +68,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         defaultValue: 0,
       }
-    });
+    }, {underscored: true});
     User.associate = function(models) {
       User.hasMany(models.Order)
     };

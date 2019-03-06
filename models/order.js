@@ -7,10 +7,6 @@ module.exports = function(sequelize, DataTypes) {
           len: [32],
         }
       },
-      customer_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true
-      },
       discount: {
         type: DataTypes.DECIMAL(10,2),
         allowNull: true,
@@ -60,7 +56,7 @@ module.exports = function(sequelize, DataTypes) {
           len: [255],
         }
       }
-    });
+    }, {underscored: true});
     Order.associate = function(models) {
       Order.hasMany(models.Pizza);
       Order.belongsTo(models.User);
