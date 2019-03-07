@@ -5,8 +5,13 @@ var PORT = process.env.PORT || 3000;
 
 var db = require("./models");
 
+app.use(express.static("public"));
+
 require("./routes/user-api-routes.js")(app);
 require("./routes/order-api-routes.js")(app);
+require("./routes/reports-html-routes.js")(app);
+require("./routes/reports-api-routes.js")(app);
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
