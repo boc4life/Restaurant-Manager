@@ -2,66 +2,39 @@ module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
       phone_number: {
         type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-          len: [10]
-        }
+        allowNull: true
       },
       first_name: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          len: [32],
-        }
+        allowNull: true
       },
       last_name: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          len: [32],
-        }
+        allowNull: true
       },
       address: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          len: [64],
-        }
+        allowNull: true
       },
       suite: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          len: [10],
-        }
+        allowNull: true
       },
       city: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          len: [32],
-        }
+        allowNull: true
       },
       state: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          len: [2],
-        }
+        allowNull: true
       },
       zip: {
         type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-          len: [8],
-        }
+        allowNull: true
       },
       notes: {
         type: DataTypes.TEXT,
-        allowNull: true,
-        validate: {
-          len: [255],
-        }
+        allowNull: true
       },
       premium: {
         type: DataTypes.BOOLEAN,
