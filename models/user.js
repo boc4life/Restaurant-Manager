@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
       phone_number: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [10]
         }
@@ -65,7 +65,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       premium: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
+        allowNull: true,
         defaultValue: 0,
       }
     }, {underscored: true});
