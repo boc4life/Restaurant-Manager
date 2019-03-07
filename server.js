@@ -9,9 +9,12 @@ require("./routes/user-api-routes.js")(app);
 require("./routes/order-api-routes.js")(app);
 require("./routes/pizzas-api-routes.js")(app);
 require("./routes/toppings-api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(express.static("public"));
 
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
