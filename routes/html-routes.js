@@ -11,7 +11,7 @@ module.exports = function(app) {
   });
 
   app.get("/order", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/inventory.html"));
+    res.sendFile(path.join(__dirname, "../public/html/edashboard.html"));
   });
 
 };

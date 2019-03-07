@@ -3,9 +3,11 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="short icon" href="../images/icon.png" type="image/icon">
 <link href="../css/edashboard.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/customer.js" type="text/javascript"></script>
 <title>PizzaLovers</title>
 </head>
 
@@ -45,43 +47,78 @@
              <div class="card-title icon fa fas fa-users" style="text-align: left"> Create a New Customer</div>
             </div>
             <div class="col">
-        <form>
+        <form id='customer-form'>
             <div class="form-group input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                     </div>
-                  
-                    <input name="" class="form-control" placeholder="Phone number" type="tel">
+                    <input name="" class="form-control" id="phone-number" placeholder="Phone number" type="tel">
             </div> 
           
             <div class="form-group input-group">
               <div class="input-group-prepend">
                   <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                </div>
-                  <input name="" class="form-control" placeholder="First Name" type="text">
+                  <input name="" class="form-control" id="cus-firstName" placeholder="First Name" type="text">
             </div> <!-- form-group// -->
+
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                  </div>
-                <input name="" class="form-control" placeholder="Last Name" type="text">
+                <input name="" class="form-control" id="cus-lastName" placeholder="Last Name" type="text">
             </div> <!-- form-group// -->
-              <div class="form-group input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-               </div>
-                  <input name="" class="form-control" placeholder="Email address" type="email">
-            </div> <!-- form-group// -->
+              
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"> <i class="fas fa-home"></i> </span>
                  </div>
-                <input name="" class="form-control" placeholder="address" type="text">
+                <input name="" class="form-control" id="address" placeholder="address" type="text">
+            </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-home"></i> </span>
+                 </div>
+                <input name="" class="form-control" id="suite" placeholder="suite number (if any)" type="text">
+            </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-home"></i> </span>
+                 </div>
+                <input name="" class="form-control" id="city" placeholder="city" type="text">
+            </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-home"></i> </span>
+                 </div>
+                <input name="" class="form-control" id="state" placeholder="state" type="text">
+            </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-home"></i> </span>
+                 </div>
+                <input name="" class="form-control" id="zip" placeholder="zip code" type="text" pattern="[0-9]{5}">
+            </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-home"></i> </span>
+                 </div>
+                <input name="" class="form-control" id="notes" placeholder="special notes" type="text">
+            </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-home"></i> </span>
+                 </div>
+                <input name="" class="form-control" id="premium" type="checkbox">
             </div> <!-- form-group// -->
               
-                  <button type="submit" class="btn btn-primary btn-block"> Submit </button>
-               <!-- form-group// -->      
-              <p class="text-center">Have an account? <a href="">Order Now!</a> </p>                                                                 
+                  <button type="submit" class="btn btn-primary btn-block"> Submit </button>                                                                
           </form>
         </div>  
           </article>
