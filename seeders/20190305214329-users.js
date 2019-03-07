@@ -18,7 +18,7 @@ module.exports = {
     address: "1007 Bradley Court",
     city: "Mount Laurel",
     state: "NJ",
-    zip: 08054,
+    zip: "08054",
     premium: false
   },
   {
@@ -28,7 +28,7 @@ module.exports = {
     address: "1313 Mockingbird Lane",
     city: "Somerset",
     state: "NJ",
-    zip: 08542,
+    zip: "08542",
     premium: false
   },
   {
@@ -38,7 +38,7 @@ module.exports = {
     address: "2121 Middle of Nowhere",
     city: "Philadelphia",
     state: "PA",
-    zip: 19831,
+    zip: "19831",
     premium: false
   }], {});
   },
