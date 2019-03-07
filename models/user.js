@@ -29,8 +29,11 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true
       },
       zip: {
-        type: DataTypes.INTEGER,
-        allowNull: true
+        type: DataTypes.STRING,
+        allowNull: true,
+        validate: {
+          len: [8],
+        }
       },
       notes: {
         type: DataTypes.TEXT,
