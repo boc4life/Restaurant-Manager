@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var phoneNum = $('#phone-number');
     var firstName = $("#cus-firstName");
-    var lastName = $('#cus-lastname');
+    var lastName = $('#cus-lastName');
     var address = $('#address');
     var suite = $('#suite');
     var city = $('#city');
