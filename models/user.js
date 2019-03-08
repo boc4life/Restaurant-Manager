@@ -30,10 +30,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       zip: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          len: [8],
-        }
+        allowNull: true
       },
       notes: {
         type: DataTypes.TEXT,
