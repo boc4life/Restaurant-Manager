@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
       phone_number: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true
       },
       first_name: {
@@ -30,10 +30,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       zip: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          len: [8],
-        }
+        allowNull: true
       },
       notes: {
         type: DataTypes.TEXT,
@@ -46,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     }, {underscored: true});
     User.associate = function(models) {
-      User.hasMany(models.Order)
+      User.hasMany(models.Order, {as: "Orders"})
     };
     return User;
   }
