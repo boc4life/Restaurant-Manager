@@ -1,4 +1,6 @@
-let pizzaNum = 0
+// We start on pizzaNum 0 and increment in the pizzaForm submit function.
+let pizzaNum = 0;
+// This is the order object that gets sent in the post request on checkout. It's currently initialized for some default values that should be made dynamic in the finished product.
 let order = {
     user_id: 1,
     pizzas: 0,
@@ -10,6 +12,7 @@ let order = {
     notes: ""
 }
 
+// Add pizza function that triggers after clicking bottom submit button.
 $("#pizzaForm").submit(function(event){
     event.preventDefault();
     var ingArr = [];
@@ -34,7 +37,7 @@ $("#pizzaForm").submit(function(event){
         ingArr.push($(this).attr("data-id"))
     });
 
-    // Appending order information to order object and update current costs of order.
+    // Appending pizza information to order object and update current costs of order.
     order["pizza" + pizzaNum + "ingredients"] = ingArr
     order["meats" + pizzaNum] = meats;
     order["veggies" + pizzaNum] = veggies;
@@ -49,6 +52,7 @@ $("#pizzaForm").submit(function(event){
     pizzaNum++
 })
 
+// "Checkout" function triggered when clicking submit button on top of page.
 $("#orderSubmit").submit(function(event){
     $.ajax("/api/orders", {
         type: "POST",
