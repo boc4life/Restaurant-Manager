@@ -21,10 +21,7 @@ module.exports = function(app) {
   });
 
   app.post("/api/orders", function(req, res) {
-  //   db.Order.create(req.body).then(function(dbOrder) {
-  //     res.json(dbOrder);
-  //   });
-    console.log(req.body)
+    var request = req.body
     db.Order.create({
       type: req.body.type,
       user_id: req.body.user_id,
@@ -36,10 +33,19 @@ module.exports = function(app) {
       payment_type: req.body.payment_type,
       notes: req.body.notes
     }).then(function(response){
-      console.log(response)
+      let orderID = response.dataValues.id
       for (let i = 0; i < req.body.pizzas; i++){
-        db.Pizza.create({
-          
+        let newPizza = {
+          order_id: orderID,
+          price: request["price" + i]
+        }
+        db.Pizza.create(newPizza).then(function(pizzaResponse){
+            pizzaResponse.setIngredients(request["pizza" + i + "ingredients"]);
+            db.Ingredient.decrement("stock_quantity", {
+              where: {
+                id: [request["pizza" + i + "ingredients"], 9, 10, 11]
+              }
+            })
         })
       } 
     })
