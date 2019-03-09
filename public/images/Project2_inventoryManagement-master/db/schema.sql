@@ -1,0 +1,33 @@
+DROP DATABASE IF EXISTS shoes_db;
+
+CREATE DATABASE shoes_db;
+
+USE shoes_db;
+
+CREATE TABLE shoes (
+
+  id INT NOT NULL AUTO_INCREMENT,
+  brand VARCHAR(200) NOT NULL,
+  model VARCHAR(200) NOT NULL,
+  female BOOLEAN NOT NULL DEFAULT TRUE,
+  inventory INT NOT NULL DEFAULT 0,
+  price INT NOT NULL DEFAULT 0,
+  position VARCHAR(200) NOT NULL,
+  department VARCHAR(200) NOT NULL,
+  aisle  VARCHAR(200) NOT NULL,
+  section  VARCHAR(200) NOT NULL,
+  shelf VARCHAR(200) NOT NULL,
+  position VARCHAR(200) NOT NULL,
+  date TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
+
+CREATE TABLE shoes (
+  aisle  VARCHAR(200) NOT NULL,
+  section  VARCHAR(200) NOT NULL,
+  shelf VARCHAR(200) NOT NULL,
+  position VARCHAR(200) NOT NULL,
+  date TIMESTAMP,
+  PRIMARY KEY (id)
+);

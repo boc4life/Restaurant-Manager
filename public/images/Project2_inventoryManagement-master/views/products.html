@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/product.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- AJAX JS (required for AJAX, also supports JQuery) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="./assets/js/index.js"></script>
+    <script src="/static/assets/js/products.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-feather-alt"></i> QUILL
+        </a>
+
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a id="logoutButton" class="nav-link" href="/">LOG OUT</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="header">
+        <h2>Inventory
+            <br>
+            <button id="productAdd" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#add-product-modal">Add a Product</button>
+    </div>
+    <div>
+
+    </div>
+
+    <table id="productContainer" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Model</th>
+                <th scope="col">Size</th>
+                <th scope="col">Width</th>
+                <th scope="col">Count</th>
+                <th scope="col">Location</th>
+            </tr>
+        </thead>
+        <tbody id="productTable">
+
+        </tbody>
+
+    </table>
+
+    <!-- ADD PRODUCT MODAL -->
+    <div id="add-product-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form id="add-product-form">
+                    <!-- Product Values -->
+                    <div class="input-group">
+                        <div class="input-group-prepend p-2 w-25">
+                            <label for="product-type">Product Type:</label>
+                        </div>
+                        <input type="text" class="form-control" id="product-type" placeholder="Product Type">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend p-2 w-25">
+                            <label for="product-model">Model:</label>
+                        </div>
+                        <input type="text" class="form-control" id="product-model" placeholder="Model">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend p-2 w-25">
+                            <label for="product-size">Size:</label>
+                        </div>
+                        <input type="text" class="form-control" id="product-size" placeholder="Size">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend p-2 w-25">
+                            <label for="product-width">Width:</label>
+                        </div>
+                        <input type="text" class="form-control" id="product-width" placeholder="Width">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend p-2 w-25">
+                            <label for="product-count">Count:</label>
+                        </div>
+                        <input type="text" class="form-control" id="product-count" placeholder="#">
+                    </div>
+
+                    <!-- Location -->
+                    <div class="input-group">
+                        <div class="p-2 w-25">
+                            <label for="aisle-sel">Aisle</label>
+                            <select class="form-control location-select" id="location-select-0" name="aisle-sel-list">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="p-2 w-25">
+                            <label for="aisle-sel">Section</label>
+                            <select class="form-control location-select" id="location-select-1" name="aisle-sel-list" disabled>
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="p-2 w-25">
+                            <label for="shelf-sel">Shelf</label>
+                            <select class="form-control location-select" id="location-select-2" name="shelf-sel-list" disabled>
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="p-2 w-25">
+                            <label for="position-sel">Position</label>
+                            <select class="form-control location-select" id="location-select-3" name="position-sel-list" disabled>
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="add-product-submit" class="btn btn-primary" disabled>Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+</body>
+
+</html>

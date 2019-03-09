@@ -1,0 +1,70 @@
+body {
+	animation: fadeIn 2s;
+	background: #5F7367;
+}
+
+h2 {
+	font-size: 3em;
+	position: relative;
+	right: 30px;
+	color: #EDFFEC;
+}
+
+#header {
+	position: relative;
+	left: 43%;
+	top: 30px;
+}
+
+.table {
+    background: #515A47;
+    text-align: center;
+    width: 1200px;
+    align-content: center;
+    height: 100px;
+	border-width: 1px;
+	border-style: solid;
+	border: #111D13;
+	color: #EDFFEC;
+	position: relative;
+	left: 5%;
+	top: 100px;
+	
+}
+
+#productAdd {
+	position: relative;
+	top: 50px;
+	left: 20px;
+	background: #515A47;
+    color: #111D13;
+	border: #111D13;
+	color: #EDFFEC;
+}
+ 
+.jumbotron {
+    background: #5F7367;
+    text-align: center;
+}
+        
+.modal-content {
+    padding: 10px;
+}
+a {
+    color: #5F7367;
+}
+
+a:hover {
+    color: #111D13;
+}
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }

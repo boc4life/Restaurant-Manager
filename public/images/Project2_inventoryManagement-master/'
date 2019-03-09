@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+for i in {1..3}; do
+  for j in {1..3}; do
+    for k in {1..2}; do
+      for m in {1..2}; do
+        echo "insert into locations (aisle, section, shelf, position) values ($i, $j, $k, $m);"
+      done
+    done
+  done
+done
