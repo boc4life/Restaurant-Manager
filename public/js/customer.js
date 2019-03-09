@@ -33,4 +33,7 @@ $(document).ready(function() {
       $.post("/api/users", userData)
     }
 
+    // $(document).on('click', '.lookup', function() {
+    //   $.get("/api/users", )
+    // })
 });
