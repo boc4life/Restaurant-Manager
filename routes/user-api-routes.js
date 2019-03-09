@@ -24,7 +24,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/user/:id", function(req, res) {
+  app.get("/api/users/id/:id", function(req, res) {
     db.User.findOne({
       where: {
         id: req.params.id
@@ -34,6 +34,17 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
+
+  app.get("/api/users/phone/:phone", function(req, res){
+    var query = req.params.phone
+    db.User.findOne({
+      where: {
+        phone_number: query
+      }
+    }).then(function(dbUser){
+      res.json(dbUser);
+    })
+  })
 
   app.post("/api/users", function(req, res) {
     console.log("Post")
