@@ -21,4 +21,8 @@ module.exports = function(app) {
   app.get("/order-lookup", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/orders.html"));
   });
+
+  app.get("/customer-lookup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/customer.html"));
+  });
 };
