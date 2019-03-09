@@ -9,6 +9,9 @@ html, body, section, .page {
     background-size: cover;
     background-repeat: no-repeat;
   }
+body {
+  overflow: scroll;
+}
     .page {
       color: white;
       text-align: center;
@@ -73,8 +76,7 @@ html, body, section, .page {
     .hint a {
       transition: all 250ms easet-out;
     }
-  
-  
+
   .divider-text:after {
       content: "";
       position: absolute;
