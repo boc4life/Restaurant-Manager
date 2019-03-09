@@ -15,6 +15,15 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/users-lookup", function(req, res) {
+    var query = {};
+    db.User.findAll({
+      where: query
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
   app.get("/api/user/:id", function(req, res) {
     db.User.findOne({
       where: {
@@ -27,6 +36,7 @@ module.exports = function(app) {
   });
 
   app.post("/api/users", function(req, res) {
+    console.log("Post")
     db.User.create(req.body).then(function(dbUser) {
       res.json(dbUser);
     });
