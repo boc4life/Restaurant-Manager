@@ -1,5 +1,14 @@
-let pizzaNum = 1
-let order = new Object()
+let pizzaNum = 0
+let order = {
+    user_id: 1,
+    pizzas: 0,
+    type: "Pickup",
+    discount: 0,
+    subtotal: 0,
+    tip: 0,
+    payment_type: "Cash",
+    notes: ""
+}
 
 $("#pizzaForm").submit(function(event){
     event.preventDefault();
@@ -19,7 +28,21 @@ $("#pizzaForm").submit(function(event){
     order["meats" + pizzaNum] = meats;
     order["veggies" + pizzaNum] = veggies;
     order["price" + pizzaNum] = price;
+    order.subtotal += parseInt(price)
+    order.tax = order.subtotal * .06
+    order.total_due = parseInt(order.subtotal) + parseFloat(order.tax);
+
+    order.pizzas += 1;
     console.log(order)
     $("#cart").prepend("Pizza " + pizzaNum + ": <br>Toppings: " + order["meats" + pizzaNum] + " " + order["veggies" + pizzaNum] + "<br>Price: " + order["price" + pizzaNum])
     pizzaNum++
+})
+
+$("#orderSubmit").submit(function(event){
+    $.ajax("/api/orders", {
+        type: "POST",
+        data: order
+    }).then(function(response){
+        console.log("Order Posted")
+    })
 })
