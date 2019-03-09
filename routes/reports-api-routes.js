@@ -27,11 +27,20 @@ app.get("/api/dayofweek", function(req, res){
     }).then(function(data){
         let arr = [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00];
         for (let i = 0; i < data.length; i++) {
-            arr[data[i].dataValues.dayofweek] = parseFloat(arr[data[i].dataValues.dayofweek]) + parseFloat(data[i].dataValues.subtotal);
+            arr[(data[i].dataValues.dayofweek - 1)] += parseFloat(data[i].dataValues.subtotal);
+            console.log(arr)
             if (i == (data.length - 1)) {
                 res.json(arr)
             }
         }
+    })
+})
+
+app.get("/api/inventory", function(req, res){
+    db.Ingredient.findAll({
+        attributes: ["stock_quantity"]
+        }).then(function(data){
+        res.json(data);
     })
 })
 };

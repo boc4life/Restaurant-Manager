@@ -7,5 +7,9 @@ module.exports = function(app) {
 
     app.get("/dayofweek", function(req, res){
         res.sendFile(path.join(__dirname + "/../public/html/reports", "dayofweek.html"));
+    });
+
+    app.get("/inventory", function(req, res){
+        res.sendFile(path.join(__dirname + "/../public/html/reports", "inventory.html"));
     })
 }
