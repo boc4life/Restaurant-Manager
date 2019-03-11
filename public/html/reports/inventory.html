@@ -16,7 +16,7 @@
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
-        <script type="text/javascript" src="./../../js/dayofweekreport.js"></script>
+        <script type="text/javascript" src="./../../js/inventory.js"></script>
         <title>PizzaLovers</title>
     </head>
     <body style="background-image: url(../../images/bannerpizza2.jpg);">
@@ -41,11 +41,10 @@
                     <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
                 </ul>
                 <div class="main-container">
-                    <h1>Reports</h1>
-                    <a href="/inventory"><button>View Inventory</button></a>
-                    <a href="/order-lookup"><button>Order Lookup</button></a>
-                    <a href="/sales-report"><button>Sales Reports</button></a>
-                    <a href="/customer-report"><button>Customer Report</button></a>
+                    <h1>Inventory report</h1>
+                    <div class="chart-container" style="height:400px; width: 600px;">
+                        <canvas id="myChart" width="150" height="100"></canvas>
+                    </div>
                 </div>
             </div>
         </div>

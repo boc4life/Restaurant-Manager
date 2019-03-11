@@ -1,56 +1,61 @@
+<!DOCTYPE html>
 <html>
-<head>
-<!--Bootstrap-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<!--CSS files-->
-<link href="../css/signin.css" rel="stylesheet">
-<!--favicon-->
-<link rel="short icon" href="../images/icon.png" type="image/icon">
-<title>PizzaLovers</title>
-</head>
-<body style="background-image: url(../images/bannerpizza2.jpg);">
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-    <div class="container">
-        <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
-
-  <!--all pages-->
-  <div class="ct" id="t1">
-      <div class="ct" id="t2">
-        <div class="ct" id="t3">
-            <div class="ct" id="t4">
-                    <ul>
-                <a href="../html/home.html"><li class="icon fa fa-home" id="uno"></li></a>
-                <a href="../html/lookup.html"><li class="icon fa fas fa-users" id="dos"></li></a>
-                <a href="../html/menu.html"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
-                <a href="../html/signin.html"><li class="icon fas fa-key" id="cuatro"></li></a>
-              </ul>
-    
-
-<div class="main-container">
-    <form class="form-signin">
-  <h1 class="h3 mb-3 font-weight-normal">SIGN IN</h1>
-  
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-  
-  <button class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">Login</button>
-  
-    </form>
-</div>
-
-
-</div>
-</div>
-</div>
-</div>
-
-</body>
-
+    <head>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!--CSS files-->
+        <link href="../css/signin.css" rel="stylesheet">
+        <!--favicon-->
+        <link rel="short icon" href="../images/icon.png" type="image/icon">
+        <!--JavaScript-->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <title>PizzaLovers</title>
+    </head>
+    <body style="background-image: url(../images/bannerpizza2.jpg);">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+          <!--all pages-->
+        <div class="ct" id="t1">
+            <div class="ct" id="t2">
+                <div class="ct" id="t3">
+                    <div class="ct" id="t4">
+                        <ul>
+                            <a href="/home"><li class="icon fa fa-home" id="uno"></li></a>
+                            <a href="/order"><li class="icon fa fas fa-users" id="dos"></li></a>
+                            <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
+                            <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
+                        </ul>
+                        <div class="main-container">
+                            <form class="form-signin">
+                          <h1 class="h3 mb-3 font-weight-normal">SIGN IN</h1>
+                            
+                          <label for="inputPassword" class="sr-only">Password</label>
+                          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                            
+                          <button class="btn btn-outline-white wow fadeInDown login" data-wow-delay="0.4s">Login</button>
+                            
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        $(document).on('click', '.login', function(event) {
+            event.preventDefault(); 
+            var password = $('#inputPassword').val();
+            if (password == '1234') {
+                window.location.href="/reports"
+            }
+        })
+        </script>
+    </body>
 </html>

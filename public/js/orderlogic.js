@@ -1,4 +1,6 @@
-let pizzaNum = 0
+// We start on pizzaNum 0 and increment in the pizzaForm submit function.
+let pizzaNum = 0;
+// This is the order object that gets sent in the post request on checkout. It's currently initialized for some default values that should be made dynamic in the finished product.
 let order = {
     user_id: 1,
     pizzas: 0,
@@ -10,13 +12,19 @@ let order = {
     notes: ""
 }
 
+// Add pizza function that triggers after clicking bottom submit button.
 $("#pizzaForm").submit(function(event){
     event.preventDefault();
+    var ingArr = [];
     var price = 10
+
+    // meatAdd and vegAdd compute the surplus cost of toppings. $2 for meats and $1 for vegetables. They are then added to the base price of $10
     var meatAdd = $('input[name="meatTopping"]:checked').length * 2;
     var vegAdd = $('input[name="vegTopping"]:checked').length;
     price += parseInt(meatAdd)
     price += parseInt(vegAdd)
+
+    // The following 2 loops create display variables for meats and veggies. The loop below populates ingArr with data values for the toppings.
     var meats = ""
     $("input[name='meatTopping']:checked").each(function(){
         meats += $(this).val() + " "
@@ -25,6 +33,12 @@ $("#pizzaForm").submit(function(event){
     $("input[name='vegTopping']:checked").each(function(){
         veggies += $(this).val() + " "
     });
+    $("input[type='checkbox']:checked").each(function(){
+        ingArr.push($(this).attr("data-id"))
+    });
+
+    // Appending pizza information to order object and update current costs of order.
+    order["pizza" + pizzaNum + "ingredients"] = ingArr
     order["meats" + pizzaNum] = meats;
     order["veggies" + pizzaNum] = veggies;
     order["price" + pizzaNum] = price;
@@ -33,11 +47,12 @@ $("#pizzaForm").submit(function(event){
     order.total_due = parseInt(order.subtotal) + parseFloat(order.tax);
 
     order.pizzas += 1;
-    console.log(order)
+    
     $("#cart").prepend("Pizza " + pizzaNum + ": <br>Toppings: " + order["meats" + pizzaNum] + " " + order["veggies" + pizzaNum] + "<br>Price: " + order["price" + pizzaNum])
     pizzaNum++
 })
 
+// "Checkout" function triggered when clicking submit button on top of page.
 $("#orderSubmit").submit(function(event){
     $.ajax("/api/orders", {
         type: "POST",

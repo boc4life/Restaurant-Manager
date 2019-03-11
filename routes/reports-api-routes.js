@@ -27,11 +27,31 @@ app.get("/api/dayofweek", function(req, res){
     }).then(function(data){
         let arr = [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00];
         for (let i = 0; i < data.length; i++) {
-            arr[data[i].dataValues.dayofweek] = parseFloat(arr[data[i].dataValues.dayofweek]) + parseFloat(data[i].dataValues.subtotal);
+            arr[(data[i].dataValues.dayofweek - 1)] += parseFloat(data[i].dataValues.subtotal);
             if (i == (data.length - 1)) {
                 res.json(arr)
             }
         }
+    })
+})
+
+app.get("/api/inventory", function(req, res){
+    db.Ingredient.findAll({
+        attributes: ["stock_quantity"]
+        }).then(function(data){
+        res.json(data);
+    })
+})
+
+app.get("/api/topcustomers", function(req, res){
+    db.Order.findAll({
+        attributes: ["user_id", [db.Order.sequelize.fn("sum", db.Order.sequelize.col("subtotal")), "total"]],
+        group: ["user_id"],
+        order: [[db.Order.sequelize.fn("sum", db.Order.sequelize.col("subtotal")), "DESC"]],
+        limit: 10,
+        include: [{model: db.User, attributes: ["first_name", "last_name"]}]
+    }).then(function(customers){
+        res.json(customers)
     })
 })
 };
