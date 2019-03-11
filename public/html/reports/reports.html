@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!--CSS files-->
+        <link href="../../css/lookup.css" rel="stylesheet">
+        <link href="../../css/orders.css" rel="stylesheet">
+        <link href="../../css/reports.css" rel="stylesheet">
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/jquery-ui.css" rel="stylesheet">
+        <!--favicon-->
+        <link rel="short icon" href="../../images/icon.png" type="image/icon">
+        <!--JavaScript-->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+        <script type="text/javascript" src="./../../js/dayofweekreport.js"></script>
+        <title>PizzaLovers</title>
     </head>
-    <body>
-        <a href="inventory.html"><button>View Inventory</button></a>
-        <a href="order.html"><button>Order Lookup</button></a>
-        <a href="salesReports.html"><button>Sales Report</button></a>
-        <a href="customersReport.html"><button>Customer Report</button></a>
-    </body>
+    <body style="background-image: url(../../images/bannerpizza2.jpg);">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+      <!--all pages-->
+    <div class="ct" id="t1">
+      <div class="ct" id="t2">
+        <div class="ct" id="t3">
+            <div class="ct" id="t4">
+                <ul>
+                    <a href="/home"><li class="icon fa fa-home" id="uno"></li></a>
+                    <a href="/order"><li class="icon fa fas fa-users" id="dos"></li></a>
+                    <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
+                    <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
+                </ul>
+                <div class="main-container">
+                    <h1>Reports</h1>
+                    <a href="/inventory"><button>View Inventory</button></a>
+                    <a href="/order-lookup"><button>Order Lookup</button></a>
+                    <a href="/sales-report"><button>Sales Reports</button></a>
+                    <a href="/customer-report"><button>Customer Report</button></a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+      </body>
 </html>
