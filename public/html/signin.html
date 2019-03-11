@@ -9,6 +9,8 @@
         <link href="../css/signin.css" rel="stylesheet">
         <!--favicon-->
         <link rel="short icon" href="../images/icon.png" type="image/icon">
+        <!--JavaScript-->
+        <script src="https://code.jquery.com/jquery.js"></script>
         <title>PizzaLovers</title>
     </head>
     <body style="background-image: url(../images/bannerpizza2.jpg);">
@@ -38,7 +40,7 @@
                           <label for="inputPassword" class="sr-only">Password</label>
                           <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
                             
-                          <button class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">Login</button>
+                          <button class="btn btn-outline-white wow fadeInDown login" data-wow-delay="0.4s">Login</button>
                             
                             </form>
                         </div>
@@ -46,5 +48,14 @@
                 </div>
             </div>
         </div>
+        <script>
+        $(document).on('click', '.login', function(event) {
+            event.preventDefault(); 
+            var password = $('#inputPassword').val();
+            if (password == '1234') {
+                window.location.href="/reports"
+            }
+        })
+        </script>
     </body>
 </html>
