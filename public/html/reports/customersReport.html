@@ -13,7 +13,9 @@
         <!--favicon-->
         <link rel="short icon" href="../../images/icon.png" type="image/icon">
         <!--JavaScript-->
-        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
         <script type="text/javascript" src="./../../js/customersreport.js"></script>
@@ -41,7 +43,149 @@
                     <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
                 </ul>
                 <div class="main-container">
+                    <h1>Customer Lookup</h1>
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                              <h2 class="mb-0">
+                                <button class="btn btn-link" class="lookup" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  View top 10 customers
+                                </button>
+                              </h2>
+                            </div>
                     
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                              <div class="card-body customer-lookup">
+                                    <table class="text-center text-dark" style="width:100%; background-color:wheat">
+                                            <thead>
+                                                <th>ID</th>
+                                                <th>Firstname</th> 
+                                                <th>Lastname</th>
+                                                <th>Overall total</th>
+                                            </thead>
+                                            <tbody>
+                                
+                                            </tbody>
+                                    </table>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                              <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Find customers 
+                                </button>
+                              </h2>
+                            </div>
+                        
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                              <div class="card-body">
+                                    <div class="accordion" id="accordionExample2">
+                                            <div class="card">
+                                                <div class="card-header" id="heading1">
+                                                  <h2 class="mb-0">
+                                                    <button class="btn btn-link" class="lookup" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                                      By name
+                                                    </button>
+                                                  </h2>
+                                                </div>
+                                        
+                                                <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample2">
+                                                  <div class="card-body customer-lookup-name">
+
+                                                        <table class="text-center text-dark" style="width:100%; background-color:wheat">
+                                                                
+                                                        </table>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="heading2">
+                                                  <h2 class="mb-0">
+                                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                                      By phone number 
+                                                    </button>
+                                                  </h2>
+                                                </div>
+                                            
+                                                <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample2">
+                                                  <div class="card-body">
+                                                        
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="heading3">
+                                                  <h2 class="mb-0">
+                                                    <button class="btn btn-link" class="lookup" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                                      By city
+                                                    </button>
+                                                  </h2>
+                                                </div>
+                                        
+                                                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample2">
+                                                  <div class="card-body customer-lookup-name">
+
+                                                        <table class="text-center text-dark" style="width:100%; background-color:wheat">
+                                                                
+                                                        </table>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="heading4">
+                                                  <h2 class="mb-0">
+                                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                                      By zip
+                                                    </button>
+                                                  </h2>
+                                                </div>
+                                            
+                                                <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample2">
+                                                  <div class="card-body">
+                                                        
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="heading5">
+                                                  <h2 class="mb-0">
+                                                    <button class="btn btn-link" class="lookup" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                                                      By state
+                                                    </button>
+                                                  </h2>
+                                                </div>
+                                        
+                                                <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample2">
+                                                  <div class="card-body customer-lookup-name">
+
+                                                        <table class="text-center text-dark" style="width:100%; background-color:wheat">
+                                                                
+                                                        </table>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="heading6">
+                                                  <h2 class="mb-0">
+                                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                                      By premium status
+                                                    </button>
+                                                  </h2>
+                                                </div>
+                                            
+                                                <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionExample2">
+                                                  <div class="card-body">
+                                                        
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
