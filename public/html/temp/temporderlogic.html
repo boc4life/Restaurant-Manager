@@ -1,24 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-</head>
-<body>
-    <div id="cart">
+    
+                <!--Bootstrap-->
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                <!-- Font Awesome -->
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+                <!--CSS files-->
+                <link href="../../css/lookup.css" rel="stylesheet">
+                <link href="../../css/orders.css" rel="stylesheet">
+                <!--favicon-->
+                <link rel="short icon" href="../../images/icon.png" type="image/icon">
+                <title>PizzaLovers</title>
+    </head>
+        <body style="background-image: url(../../images/bannerpizza2.jpg);">
+                <!--Navbar-->
+                <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+                    <div class="container">
+                        <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+                
+                  <!--all pages-->
+                <div class="ct" id="t1">
+                  <div class="ct" id="t2">
+                    <div class="ct" id="t3">
+                        <div class="ct" id="t4">
+                            <ul>
+                            <a href="/home"><li class="icon fa fa-home" id="uno"></li></a>
+                            <a href="/order"><li class="icon fa fas fa-users" id="dos"></li></a>
+                            <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
+                            <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
+                          </ul>
+                
+                <div class="main-container">
+                      <div class="accordion" id="accordionExample">
+
+    <div id="cart" style="text-align: center">
         <form id="orderSubmit">
             <input type="submit" value="Submit">
         </form>
     </div>
     <br><br>
-    <div id="orderform">
+    <div id="orderform" style="text-align: center">
         <form id="pizzaForm">
-        <input type="checkbox" name="meatTopping" data-id="1" value="Pepperoni"> Pepperoni<br>
-        <input type="checkbox" name="meatTopping" data-id="2" value="Sausage"> Sausage<br>
-        <input type="checkbox" name="meatTopping" data-id="3" value="Chicken"> Chicken<br>
-        <input type="checkbox" name="meatTopping" data-id="4" value="Bacon"> Bacon<br>
-        <input type="checkbox" name="vegTopping" data-id="5" value="Onion"> Onion<br>
-        <input type="checkbox" name="vegTopping" data-id="6" value="Peppers"> Peppers<br>
-        <input type="checkbox" name="vegTopping" data-id="7" value="Mushroom"> Mushroom<br>
-        <input type="checkbox" name="vegTopping" data-id="8" value="Pineapple"> Pineapple<br>
+            <img src = "../../images/pepperoni.jpg" height="50" width="50">
+        <input type="checkbox" name="meatTopping" value="Pepperoni" data-id="1"> Pepperoni<br>
+        <img src = "../../images/sausage.jpg" height="50" width="50">
+        <input type="checkbox" name="meatTopping" value="Sausage" data-id="2"> Sausage<br>
+        <img src = "../../images/chicken.jpg" height="50" width="50">
+        <input type="checkbox" name="meatTopping" value="Chicken" data-id="3"> Chicken<br>
+        <img src = "../../images/bacon.jpg" height="50" width="50">
+        <input type="checkbox" name="meatTopping" value="Bacon" data-id="4"> Bacon<br>
+        <img src = "../../images/onion.jpg" height="50" width="50">
+        <input type="checkbox" name="vegTopping" value="Onion" data-id="5"> Onion<br>
+        <img src = "../../images/peppers.jpg" height="50" width="50">
+        <input type="checkbox" name="vegTopping" value="Peppers" data-id="6"> Peppers<br>
+        <img src = "../../images/mush.jpg" height="50" width="50">
+        <input type="checkbox" name="vegTopping" value="Mushroom" data-id="7"> Mushroom<br>
+        <img src = "../../images/pineapple.jpg" height="50" width="50">
+        <input type="checkbox" name="vegTopping" value="Pineapple" data-id="8"> Pineapple<br>
         <input type="submit" value="Submit">
         </form>
     </div>
