@@ -26,7 +26,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/html/temp/temporderlogic.html"));
   });
   
-  app.get("/order-lookup", function(req, res) {
+  app.get("/order-list", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/orders.html"));
   });
 

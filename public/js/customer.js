@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    localStorage.removeItem('customerId')
     var phoneNum = $('#phone-number');
     var firstName = $("#cus-firstName");
     var lastName = $('#cus-lastName');
