@@ -20,7 +20,9 @@ module.exports = {
     tax: 1.20,
     tip: 4.00,
     total_due: 25.20,
-    payment_type: "cash"
+    payment_type: "cash",
+    created_at: '2019-03-11 00:00:00',
+    updated_at: '2019-03-11 00:00:00'
   },
   {
     type: "Pickup",
@@ -30,18 +32,21 @@ module.exports = {
     tax: 2.40,
     tip: 0.00,
     total_due: 43.40,
-    payment_type: "credit"
+    payment_type: "credit",
+    created_at: '2019-03-11 00:00:00',
+    updated_at: '2019-03-11 00:00:00'
   },
   {
     type: "In-Store",
     user_id: 3,
-
     discount: 0,
     subtotal: 10.00,
     tax: 0.60,
     tip: 1.00,
     total_due: 11.60,
-    payment_type: "cash"
+    payment_type: "cash",
+    created_at: '2019-03-11 00:00:00',
+    updated_at: '2019-03-11 00:00:00'
   }], {});
   },
 

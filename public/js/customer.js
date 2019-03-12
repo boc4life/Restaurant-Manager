@@ -12,12 +12,20 @@ $(document).ready(function() {
     var premium = $('#premium');
 
     $(document).on("submit", "#customer-form", handleCustomerFormSubmit);
-  
+    
     function handleCustomerFormSubmit(event) {
       event.preventDefault(); 
+      phoneNum = phoneNum.val()
+      if (phoneNum.startsWith('1 ', 0)) {
+        phoneNum = phoneNum.replace(/1 /g, "")
+      }
+      phoneNum = phoneNum.replace(/\(/g, "");
+      phoneNum = phoneNum.replace(/\)/g, "");
+      phoneNum = phoneNum.replace(/\-/g, "");
+      phoneNum = phoneNum.replace(/\ /g, "");
       console.log('submit')
       upsertCustomer({
-        phone_number: phoneNum.val().trim(),
+        phone_number: phoneNum.trim(),
         first_name: firstName.val(),
         last_name: lastName.val(),
         address: address.val(),
@@ -27,11 +35,16 @@ $(document).ready(function() {
         zip: zip.val().trim(),
         notes: notes.val(),
         premium: premium.val()
-      });
+      })
     }
   
     function upsertCustomer(userData) {
-      $.post("/api/users", userData)
+      $.post("/api/users", userData).then(function(response) {
+        $.get("/api/users/phone/"+response.phone_number, function(data) {
+          localStorage.setItem('customerId', data.id)
+          window.location.href='/menu'
+        });
+      })
     }
 
     $(document).on('click', '.lookup', function() {
