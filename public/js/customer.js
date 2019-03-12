@@ -88,7 +88,7 @@ function createCustomerRow(data) {
         headTr.append("<td>Creation date</td>");
         var newTr = $("<tr>");
         newTr.data("customer", data);
-        newTr.append("<td>" + data.id + "</td>");
+        newTr.append("<td><a class='customerLink' data-id='"+data.id+"' href=/this-customer>" + data.id + "</a></td>");
         newTr.append("<td>" + data.phone_number + "</td>");
         newTr.append("<td>" + data.first_name + "</td>");
         newTr.append("<td>" + data.last_name + "</td>");
@@ -105,3 +105,7 @@ function createCustomerRow(data) {
         return newTb
         
 }
+
+$(document).on('click', '.customerLink', function() {
+  localStorage.setItem('thisCustomerId', $(this).attr('data-id'));
+})
