@@ -34,12 +34,28 @@ $(document).ready(function() {
     }
 
     $(document).on('click', '.lookup', function() {
+      $('.customer-table').empty()
+      $('#placeOrder').remove()
       var phoneLookup = $('#phoneLookup').val().trim();
       $.get("/api/users/phone/"+phoneLookup, function(data) {
-        var rowsToAdd = []
-        rowsToAdd.push(createCustomerRow(data))
-        $('.customer-lookup').prepend(rowsToAdd)
+        if(data==null) {
+          $('.customer-lookup').prepend('<h4 id="warning"style="color:red; text-align:center">Sorry, no customers found with this phone number!</h4>')
+          setTimeout(function() {
+            $('#warning').hide()
+          },4000)
+        }
+        else{
+          var rowsToAdd = []
+          rowsToAdd.push(createCustomerRow(data))
+          $('.customer-table').prepend(rowsToAdd)
+          $('.button-row').append('<span id="placeOrder"><button type="submit" class="place" class="btn btn-primary mb-2">Place order</button></span>')
+          localStorage.setItem('customerId', data.id)
+        }
       })
+    })
+
+    $(document).on('click', '.place', function() {
+      var id = localStorage.getItem('customerId')
     })
 });
 
