@@ -1,5 +1,6 @@
 let ctx = "myChart";
 let graphData;
+let myChart;
 
 $( function() {
     $( "#datepickerStart" ).datepicker();
