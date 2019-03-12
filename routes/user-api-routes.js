@@ -9,7 +9,7 @@ module.exports = function(app) {
     }
     db.User.findAll({
       where: query,
-      include: [db.Order]
+      include: [{model: db.Order, as: "Orders"}]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
@@ -29,7 +29,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Order]
+      include: [{model: db.Order, as: "Orders"}]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
