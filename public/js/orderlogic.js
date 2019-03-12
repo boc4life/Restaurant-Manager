@@ -47,6 +47,7 @@ $("#pizzaForm").submit(function(event){
     order.total_due = parseInt(order.subtotal) + parseFloat(order.tax);
 
     order.pizzas += 1;
+    console.log(order)
     
     $("#cart").prepend("Pizza " + parseInt(pizzaNum+1) + ": <br>Toppings: " + order["meats" + pizzaNum] + " " + order["veggies" + pizzaNum] + "<br>Price: " + order["price" + pizzaNum])
     pizzaNum++
