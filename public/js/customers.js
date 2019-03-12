@@ -16,7 +16,7 @@ $(document).ready(function() {
     function createCustomerRow(data) {
         var newTr = $("<tr>");
         newTr.data("customer", data);
-        newTr.append("<td>" + data.id + "</td>");
+        newTr.append("<td><a class='customerLink' data-id='"+data.id+"' href=/this-customer>" + data.id + "</a></td>");
         newTr.append("<td>" + data.phone_number + "</td>");
         newTr.append("<td>" + data.first_name + "</td>");
         newTr.append("<td>" + data.last_name + "</td>");
@@ -27,7 +27,9 @@ $(document).ready(function() {
         newTr.append("<td>" + data.zip + "</td>");
         newTr.append("<td>" + data.notes + "</td>");
         newTr.append("<td>" + data.premium + "</td>");
-        newTr.append("<td>" + data.created_at + "</td>");
+        var date = data.created_at;
+        date = date.substring(0, 10);
+        newTr.append("<td>" + date + "</td>");
         return newTr;
       }
 
@@ -37,6 +39,10 @@ $(document).ready(function() {
         customerContainer.children(".alert").remove();
         customerList.prepend(rows);  
       }
+      
+      $(document).on('click', '.customerLink', function() {
+        localStorage.setItem('thisCustomerId', $(this).attr('data-id'));
+    })
 })
 
 

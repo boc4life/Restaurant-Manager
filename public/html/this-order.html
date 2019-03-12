@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!--CSS files-->
+    <link href="../css/menu.css" rel="stylesheet">
+    <link href="../css/orders.css" rel="stylesheet">
+    <!--favicon-->
+    <link rel="short icon" href="../images/icon.png" type="image/icon">
+    <!--JavaScript-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="./../js/this-order.js"></script>
+    <title>PizzaLovers</title>
+  </head>
+
+  <body style="background-image: url(../images/bannerpizza2.jpg);">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!--all pages-->
+    <div class="ct" id="t1">
+        <div class="ct" id="t2">
+          <div class="ct" id="t3">
+            <div class="ct" id="t4">
+              <ul>
+                  <a href="/home"><li class="icon fa fa-home" id="uno"></li></a>
+                  <a href="/order"><li class="icon fa fas fa-users" id="dos"></li></a>
+                  <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
+                  <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
+              </ul>
+              <div class="main-container container text-dark bg-light">
+                <div class="row">
+                  <div class="col-md-6">
+                        <h3>Order # <span class="orderNum"></span></h3>
+                        <div class="card">
+                            <div>Order type: <span class="ordType"></span></div>
+                            <div>Order date: <span class="ordDate"></span></div>
+                            <div class="card orderBody">
+                                <h5>Customer's order:</h5>
+
+                            </div>
+                            <h5>Payment info:</h5>
+                            <table>
+                                <thead>
+                                    <th>Discount</th>
+                                    <th>Subtotal</th>
+                                    <th>Tax</th>
+                                    <th>Tip</th>
+                                    <th>Total due</th>
+                                    <th>Payment type</th>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            <h5>Notes:</h5>
+                            <div class="notes">
+                            </div>
+                        </div>
+                  </div>
+                  <div class="col-md-6">
+                        <h3>Customer information</h3>
+                        <div class="card">
+                            <div>Customer ID: <span class="id"></span></div>
+                            <div>Phone #: <span class="phone"></span></div>
+                            <div>Full Name: <span class="firstname"></span><span class="lastname"></span></div>
+                            <div>Address: <span class="address"></span></div>
+                            <div>Suite #: <span class="suite"></span></div>
+                            <div>City: <span class="city"></span></div>
+                            <div>State: <span class="state"></span></div>
+                            <div>Zip: <span class="zip"></span></div>
+                            <div>Notes: <span class="notes"></span></div>
+                            <div>Premium status: <span class="premium"></span></div>
+                            <div>Valued customer since: <span class="date"></span></div>
+                        </div>
+                  </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
