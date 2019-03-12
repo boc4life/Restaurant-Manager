@@ -14,59 +14,68 @@
                 <title>PizzaLovers</title>
     </head>
         <body style="background-image: url(../images/bannerpizza2.jpg);">
-                <!--Navbar-->
-                <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-                    <div class="container">
-                        <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                </nav>
-                
-                  <!--all pages-->
-                <div class="ct" id="t1">
-                  <div class="ct" id="t2">
-                    <div class="ct" id="t3">
-                        <div class="ct" id="t4">
-                            <ul>
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+            
+              <!--all pages-->
+            <div class="ct" id="t1">
+              <div class="ct" id="t2">
+                <div class="ct" id="t3">
+                    <div class="ct" id="t4">
+                        <ul>
                             <a href="/home"><li class="icon fa fa-home" id="uno"></li></a>
                             <a href="/order"><li class="icon fa fas fa-users" id="dos"></li></a>
                             <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
                             <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
-                          </ul>
-                
-                <div class="main-container">
-                      <div class="accordion" id="accordionExample">
-
-    <div id="cart" style="text-align: center">
-        <form id="orderSubmit">
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-    <br><br>
-    <div id="orderform" style="text-align: center">
-        <form id="pizzaForm">
-            <label class="topping-label" for="pepperoni">Pepperoni</label>
-            <input class="topping-input1" id="pepperoni" type="checkbox" name="meatTopping" data-id="1" value="Pepperoni">
-            <label class="topping-label" for="sausage">Sausage</label>
-            <input class="topping-input2" id="sausage" type="checkbox" name="meatTopping" data-id="2" value="Sausage">
-            <label class="topping-label" for="chicken">Chicken</label>
-            <input class="topping-input3" id="chicken" type="checkbox" name="meatTopping" data-id="3" value="Chicken">
-            <label class="topping-label" for="bacon">Bacon</label>
-            <input class="topping-input4" id="bacon" type="checkbox" name="meatTopping" data-id="4" value="Bacon"><br>
-            <label class="topping-label" for="onion">Onion</label>
-            <input class="topping-input5" id="onion" type="checkbox" name="vegTopping" data-id="5" value="Onion">
-            <label class="topping-label" for="peppers">Peppers</label>
-            <input class="topping-input6" id="peppers" type="checkbox" name="vegTopping" data-id="6" value="Peppers">
-            <label class="topping-label" for="mushroom">Mushroom</label>
-            <input class="topping-input7" id="mushroom" type="checkbox" name="vegTopping" data-id="7" value="Mushroom">
-            <label class="topping-label" for="pineapple">Pineapple</label>
-            <input class="topping-input8" id="pineapple" type="checkbox" name="vegTopping" data-id="8" value="Pineapple"><br>
-        <input type="submit" value="Submit">
-        </form>
-    </div>
+                        </ul>
+            
+                        <div class="main-container">
+                            <h4 class="text-center">This order is being placed for:</h4>
+                            <div class="customerDiv"></div>
+                            <div class="accordion" id="accordionExample">
+                            
+                                <div id="cart" style="text-align: center">
+                                    <form id="orderSubmit">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </div>
+                                <br><br>
+                                <div id="orderform" style="text-align: center">
+                                    <form id="pizzaForm">
+                                        <label class="topping-label" for="pepperoni">Pepperoni</label>
+                                        <input class="topping-input1" id="pepperoni" type="checkbox" name="meatTopping" data-id="1" value="Pepperoni">
+                                        <label class="topping-label" for="sausage">Sausage</label>
+                                        <input class="topping-input2" id="sausage" type="checkbox" name="meatTopping" data-id="2" value="Sausage">
+                                        <label class="topping-label" for="chicken">Chicken</label>
+                                        <input class="topping-input3" id="chicken" type="checkbox" name="meatTopping" data-id="3" value="Chicken">
+                                        <label class="topping-label" for="bacon">Bacon</label>
+                                        <input class="topping-input4" id="bacon" type="checkbox" name="meatTopping" data-id="4" value="Bacon"><br>
+                                        <label class="topping-label" for="onion">Onion</label>
+                                        <input class="topping-input5" id="onion" type="checkbox" name="vegTopping" data-id="5" value="Onion">
+                                        <label class="topping-label" for="peppers">Peppers</label>
+                                        <input class="topping-input6" id="peppers" type="checkbox" name="vegTopping" data-id="6" value="Peppers">
+                                        <label class="topping-label" for="mushroom">Mushroom</label>
+                                        <input class="topping-input7" id="mushroom" type="checkbox" name="vegTopping" data-id="7" value="Mushroom">
+                                        <label class="topping-label" for="pineapple">Pineapple</label>
+                                        <input class="topping-input8" id="pineapple" type="checkbox" name="vegTopping" data-id="8" value="Pineapple"><br>
+                                    <input type="submit" value="Submit">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="./../../js/orderlogic.js"></script>
+    <script type="text/javascript" src="./../../js/menu.js"></script>
     <script>
             $(document).on('click', '.topping-label', function() {
                 if($(this).css('background-color')== 'rgb(64, 64, 244)') {
