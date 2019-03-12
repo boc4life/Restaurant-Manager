@@ -33,4 +33,12 @@ module.exports = function(app) {
   app.get("/customer-lookup", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/customer.html"));
   });
+
+  app.get("/this-customer/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/this-customer.html"));
+  });
+
+  app.get("/this-order/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/this-order.html"));
+  });
 };

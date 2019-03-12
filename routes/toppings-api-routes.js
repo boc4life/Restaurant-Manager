@@ -26,4 +26,13 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/toppings/pizza/:id", function(req, res) {
+    db.PizzaToppings.findAll({
+      where: {
+        pizza_id: req.params.id
+      },
+    }).then(function(dbTopping) {
+      res.json(dbTopping);
+    });
+  });
 };

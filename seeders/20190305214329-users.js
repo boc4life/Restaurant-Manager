@@ -19,7 +19,9 @@ module.exports = {
     city: "Mount Laurel",
     state: "NJ",
     zip: "08054",
-    premium: false
+    premium: false,
+    created_at: '2019-03-11 00:00:00',
+    updated_at: '2019-03-11 00:00:00'
   },
   {
     phone_number: 1234567890,
@@ -29,7 +31,9 @@ module.exports = {
     city: "Somerset",
     state: "NJ",
     zip: "08542",
-    premium: false
+    premium: false,
+    created_at: '2019-03-11 00:00:00',
+    updated_at: '2019-03-11 00:00:00'
   },
   {
     phone_number: 1987654321,
@@ -39,7 +43,9 @@ module.exports = {
     city: "Philadelphia",
     state: "PA",
     zip: "19831",
-    premium: false
+    premium: false,
+    created_at: '2019-03-11 00:00:00',
+    updated_at: '2019-03-11 00:00:00'
   }], {});
   },
 
