@@ -25,7 +25,7 @@ $(document).ready(function() {
         newTr.append("<td>" + data.total_due + "</td>");
         newTr.append("<td>" + data.payment_type + "</td>");
         newTr.append("<td>" + data.notes + "</td>");
-        newTr.append("<td>" + data.createdAt + "</td>");
+        newTr.append("<td>" + data.created_at + "</td>");
         newTr.append("<td>" + data.user_id + "</td>");
         return newTr;
       }

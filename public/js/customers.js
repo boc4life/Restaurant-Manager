@@ -27,7 +27,7 @@ $(document).ready(function() {
         newTr.append("<td>" + data.zip + "</td>");
         newTr.append("<td>" + data.notes + "</td>");
         newTr.append("<td>" + data.premium + "</td>");
-        newTr.append("<td>" + data.createdAt + "</td>");
+        newTr.append("<td>" + data.created_at + "</td>");
         return newTr;
       }
 

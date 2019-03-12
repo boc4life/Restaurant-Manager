@@ -55,10 +55,12 @@ $("#pizzaForm").submit(function(event){
 
 // "Checkout" function triggered when clicking submit button on top of page.
 $("#orderSubmit").submit(function(event){
+    localStorage.removeItem('customerId');
+    $('.customerDiv').empty()
     $.ajax("/api/orders", {
         type: "POST",
         data: order
     }).then(function(response){
-        console.log("Order Posted")
+        console.log("Order Posted");
     })
 })
