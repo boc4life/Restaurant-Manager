@@ -1,43 +1,48 @@
-var array = [];
-  
-    $('input[type="checkbox"]').click(function () {
-        if ($('input[type="checkbox"]:checked').length > 0) {
-            $('.col > div').hide();
-            $('input[type="checkbox"]:checked').each(function () {
-                $('.col >div[class=' + this.id + ']').show();
-            });
-        } else {
-            $('.col > div').show();
-        }
-    });
+$(document).ready(function() {
+      var id=localStorage.getItem('customerId')
+      if(id==null){console.log('you need to pick a customer')}
+      else{
+          console.log(id)
+          $.get("/api/users/id/"+id, function(data) {
+              console.log(data)
+            var rowsToAdd = []
+            rowsToAdd.push(createCustomerRow(data))
+            $('.customerDiv').prepend(rowsToAdd)
+          })
+      }
+  })
 
-    $('#myModal').on('show.bs.modal', function (e) {
-        var title = $(e.relatedTarget).data('book-id');
-        $("#myModalTitle").text(title);
-        $("#myModalBody").text(title);
-    });
-
-    $(function () {
-        $('#myModal').on('click', '#btnSave', function (e) {
-            var item = {};
-            var name = $('#myModalBody').text();
-           
-            item.name = name;
-         
-            array.push(item);
-            localStorage.setItem("array", JSON.stringify(array));
-            $('#myModal').modal('hide');
-console.log("done")
-        });
-    });
-
-    $('#myModal2').on('show.bs.modal', function (e) {
-        var i;
-        array = [];
-        array = JSON.parse(localStorage.getItem("array"));
-        $('#myModalBody2').empty();
-        //document.getElementById('myModalBody2').innerHTML="";
-        
-    });
-
-  
+  function createCustomerRow(data) {
+    var newTb = $('<table class="text-center text-dark" style="width:100%; background-color:wheat">')
+    var headTr = $('<thead>')
+    headTr.append("<td>ID</td>");
+    headTr.append("<td>Phone #</td>");
+    headTr.append("<td>Firstname</td>");
+    headTr.append("<td>Lastname</td>");
+    headTr.append("<td>Address</td>");
+    headTr.append("<td>Suite#</td>");
+    headTr.append("<td>City</td>");
+    headTr.append("<td>State</td>");
+    headTr.append("<td>Zip code</td>");
+    headTr.append("<td>Notes</td>");
+    headTr.append("<td>Premium</td>");
+    headTr.append("<td>Creation date</td>");
+    var newTr = $("<tr>");
+    newTr.data("customer", data);
+    newTr.append("<td>" + data.id + "</td>");
+    newTr.append("<td>" + data.phone_number + "</td>");
+    newTr.append("<td>" + data.first_name + "</td>");
+    newTr.append("<td>" + data.last_name + "</td>");
+    newTr.append("<td>" + data.address + "</td>");
+    newTr.append("<td>" + data.suite + "</td>");
+    newTr.append("<td>" + data.city + "</td>");
+    newTr.append("<td>" + data.state + "</td>");
+    newTr.append("<td>" + data.zip + "</td>");
+    newTr.append("<td>" + data.notes + "</td>");
+    newTr.append("<td>" + data.premium + "</td>");
+    newTr.append("<td>" + data.created_at + "</td>");
+    newTb.append(headTr)
+    newTb.append(newTr)
+    return newTb
+    
+}

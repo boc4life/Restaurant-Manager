@@ -2,7 +2,7 @@
 let pizzaNum = 0;
 // This is the order object that gets sent in the post request on checkout. It's currently initialized for some default values that should be made dynamic in the finished product.
 let order = {
-    user_id: 1,
+    user_id: localStorage.getItem('customerId'),
     pizzas: 0,
     type: "Pickup",
     discount: 0,
@@ -55,10 +55,12 @@ $("#pizzaForm").submit(function(event){
 
 // "Checkout" function triggered when clicking submit button on top of page.
 $("#orderSubmit").submit(function(event){
+    localStorage.removeItem('customerId');
+    $('.customerDiv').empty()
     $.ajax("/api/orders", {
         type: "POST",
         data: order
     }).then(function(response){
-        console.log("Order Posted")
+        console.log("Order Posted");
     })
 })
