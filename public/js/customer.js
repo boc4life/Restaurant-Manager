@@ -34,15 +34,13 @@ $(document).ready(function() {
     }
 
     $(document).on('click', '.lookup', function() {
-      $('.customer-table').empty()
-      $('#placeOrder').remove()
+      $('.customer-table').empty();
+      $('#placeOrder').remove();
+      $('.warning').remove();
       var phoneLookup = $('#phoneLookup').val().trim();
       $.get("/api/users/phone/"+phoneLookup, function(data) {
         if(data==null) {
-          $('.customer-lookup').prepend('<h4 id="warning"style="color:red; text-align:center">Sorry, no customers found with this phone number!</h4>')
-          setTimeout(function() {
-            $('#warning').hide()
-          },4000)
+          $('.customer-lookup').prepend('<h4 class="warning"style="color:red; text-align:center">Sorry, no customers found with this phone number!</h4>')
         }
         else{
           var rowsToAdd = []
@@ -55,8 +53,8 @@ $(document).ready(function() {
     })
 
     $(document).on('click', '.place', function() {
-      var id = localStorage.getItem('customerId')
-    })
+      window.location.href='/menu'
+      })
 });
 
 function createCustomerRow(data) {
