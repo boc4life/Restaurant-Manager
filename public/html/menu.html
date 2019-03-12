@@ -39,13 +39,6 @@
                             <h4 class="text-center">This order is being placed for:</h4>
                             <div class="customerDiv"></div>
                             <div class="accordion" id="accordionExample">
-                            
-                                <div id="cart" style="text-align: center">
-                                    <form id="orderSubmit">
-                                        <input id='submitOrder' type="submit" value="Submit">
-                                    </form>
-                                </div>
-                                <br><br>
                                 <div id="orderform" style="text-align: center">
                                     <form id="pizzaForm">
                                         <label class="topping-label" for="pepperoni">Pepperoni</label>
@@ -66,6 +59,16 @@
                                         <input class="topping-input8" id="pineapple" type="checkbox" name="vegTopping" data-id="8" value="Pineapple"><br>
                                     <input type="submit" value="Submit">
                                     </form>
+                                </div>
+                                <br><br>
+                                <div class="container d-flex border-top border-danger" id="cartContainer">
+                                    <div id="cart">
+                                    </div>
+                                    <div id="checkout">
+                                        <form id="orderSubmit">
+                                            <input id='submitOrder' type="submit" value="Submit">
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
