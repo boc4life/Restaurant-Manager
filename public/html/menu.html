@@ -1,209 +1,83 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!--Bootstrap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <!--CSS files-->
-        <link href="../css/menu.css" rel="stylesheet">
-        <!--favicon-->
-        <link rel="short icon" href="../images/icon.png" type="image/icon">
-        <title>PizzaLovers</title>
+<head>
+    
+                <!--Bootstrap-->
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                <!-- Font Awesome -->
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+                <!--CSS files-->
+                <link href="../css/orders.css" rel="stylesheet">
+                <link href="../css/menu.css" rel="stylesheet">
+                <!--favicon-->
+                <link rel="short icon" href="../images/icon.png" type="image/icon">
+                <title>PizzaLovers</title>
     </head>
+        <body style="background-image: url(../images/bannerpizza2.jpg);">
+                <!--Navbar-->
+                <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+                    <div class="container">
+                        <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+                
+                  <!--all pages-->
+                <div class="ct" id="t1">
+                  <div class="ct" id="t2">
+                    <div class="ct" id="t3">
+                        <div class="ct" id="t4">
+                            <ul>
+                            <a href="/home"><li class="icon fa fa-home" id="uno"></li></a>
+                            <a href="/order"><li class="icon fa fas fa-users" id="dos"></li></a>
+                            <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
+                            <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
+                          </ul>
+                
+                <div class="main-container">
+                      <div class="accordion" id="accordionExample">
 
-    <body style="background-image: url(../images/bannerpizza2.jpg);">
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-          <div class="container">
-            <a class="navbar-brand" href="#"><strong>PIZZALOVERS</strong></a>
-              <span class="navbar-toggler-icon"></span>
-          </div>
-        </nav>
-        
-        
-        <div class="container-main">
-        <!--all pages-->
-        <div class="ct" id="t1">
-            <div class="ct" id="t2">
-              <div class="ct" id="t3">
-                <div class="ct" id="t4">
-                    <ul>
-                    <a href="/home"><li class="icon fa fa-home" id="uno"></li></a>
-                    <a href="/order"><li class="icon fa fas fa-users" id="dos"></li></a>
-                    <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
-                    <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
-            </ul>
-        
-            <div class="main-container" style="color: white">
-                  <div class="container">
-                      <h2>Menu List</h2>
-                      <div class="checkboxes">
-                          Category
-                          <div class="row">
-                          <input name="Pizza" type="checkbox" value="Pizza" id="Pizza"> Pizza
-                          <input name="Drinks" type="checkbox" value="Drinks" id="Drinks"> Drinks
-                          <input name="Others" type="checkbox" value="Others" id="Others"> Others
-                          </div>
-                      
-            </div>
-        
-                      <div class="wrap">
-                        <div class="row">
-                          <div class="col">
-                          <div class="Pizza">
-                              <h4>Product 1
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 1" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                          <div class="Pizza">
-                              <h4>Product 2
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 2" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                          <div class="Pizza">
-                              <h4>Product 3
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 3" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                          <div class="Pizza">
-                              <h4>Product 4
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 4" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                          <div class="Pizza">
-                              <h4>Product 5
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 5" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div class="Drinks">
-                              <h4>Product 6
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 6" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                          <div class="Drinks">
-                              <h4>Product 7
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 7" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                          <div class="Drinks">
-                              <h4>Product 8
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 8" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div class="Others">
-                              <h4>Product 9
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 9" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                          <div class="Others">
-                              <h4>Product 10
-                                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-book-id="Product 10" href="#myModal">Add to cart</button>
-                              </h4>
-                          </div>
-                        </div>
-                    
-                      </div>
-                      <div class="row">
-                          <button type="button" class="btn btn-success btn-lg pull-right" data-toggle="modal" href="#myModal2">Checkout</button>
-                        </div>
-                    
-                      <!--Cart QTY-->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="color:black">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h5 class="modal-title" id="myModalTitle"></h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                      </button>
-                                  </div>
-                                  <div class="modal-body">
-                                      <h5 class="modal-body" id="myModalBody"></h5>
-                                      Quantity:
-                                      <input type="number" name="quantity" id="quantity" min="1" max="50">
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                      <button type="button" id="btnSave" class="btn btn-primary">Save changes</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  
-                  
-                  
-                      <!--Cart Items-->
-                      <div class="modal" id="myModal2">
-                          <div class="modal-content" >
-                              <div class="modal-header" >
-                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <h4 class="modal-title">Cart Items</h4>
-                              </div>
-                              <div class="modal-body">
-                                  <table id="cart" class="table table-hover table-condensed">
-                                      <thead>
-                                          <tr>
-                                              <th style="width:50%">Product</th>
-                                              <th style="width:10%">Price</th>
-                                              <th style="width:8%">Quantity</th>
-                                              <th style="width:22%" class="text-center">Subtotal</th>
-                                              <th style="width:10%"></th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                          <tr>
-                                              <td data-th="Product">
-                                                  <div class="row">
-                                                      <div class="col-sm-2 hidden-xs">
-                                                      <div class="col-sm-10">
-                                                          <div id="myModalBody2" style="color:black">
-                                                        
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </td>
-                                              
-                                              <td data-th="Price">$150.00</td>
-                                              <td data-th="Quantity">
-                                                  <input type="number" class="form-control text-center" value="1">
-                                              </td>
-                                              <td data-th="Subtotal" class="text-center">150.00</td>
-                                              <td class="actions" data-th="">
-                                                  <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                                                  <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
-                                              </td>
-                                          </tr>
-                                      </tbody>
-                                      <tfoot>
-                                          <tr class="visible-xs">
-                                              <td class="text-center"><strong>Total 150.00</strong></td>
-                                          </tr>
-                                          <tr>
-                                              <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                                          </tr>
-                                      </tfoot>
-                                  </table>
-                              </div>
-                             </div>
-                      </div>
-                      </div>
-            </div>
-            
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>  
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!--jquery-->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="../js/menu.js"></script>
-    </body>
+    <div id="cart" style="text-align: center">
+        <form id="orderSubmit">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br><br>
+    <div id="orderform" style="text-align: center">
+        <form id="pizzaForm">
+            <label class="topping-label" for="pepperoni">Pepperoni</label>
+            <input class="topping-input1" id="pepperoni" type="checkbox" name="meatTopping" data-id="1" value="Pepperoni">
+            <label class="topping-label" for="sausage">Sausage</label>
+            <input class="topping-input2" id="sausage" type="checkbox" name="meatTopping" data-id="2" value="Sausage">
+            <label class="topping-label" for="chicken">Chicken</label>
+            <input class="topping-input3" id="chicken" type="checkbox" name="meatTopping" data-id="3" value="Chicken">
+            <label class="topping-label" for="bacon">Bacon</label>
+            <input class="topping-input4" id="bacon" type="checkbox" name="meatTopping" data-id="4" value="Bacon"><br>
+            <label class="topping-label" for="onion">Onion</label>
+            <input class="topping-input5" id="onion" type="checkbox" name="vegTopping" data-id="5" value="Onion">
+            <label class="topping-label" for="peppers">Peppers</label>
+            <input class="topping-input6" id="peppers" type="checkbox" name="vegTopping" data-id="6" value="Peppers">
+            <label class="topping-label" for="mushroom">Mushroom</label>
+            <input class="topping-input7" id="mushroom" type="checkbox" name="vegTopping" data-id="7" value="Mushroom">
+            <label class="topping-label" for="pineapple">Pineapple</label>
+            <input class="topping-input8" id="pineapple" type="checkbox" name="vegTopping" data-id="8" value="Pineapple"><br>
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="./../../js/orderlogic.js"></script>
+    <script>
+            $(document).on('click', '.topping-label', function() {
+                if($(this).css('background-color')== 'rgb(64, 64, 244)') {
+                    $(this).css('background-color', 'rgb(71, 244, 88)')
+                }
+                else ($(this).css('background-color', 'rgb(64, 64, 244)'))
+            })
+            $(document).on('click', '.topping-input', function() {
+                console.log($(this).prop('checked'))
+            })
+            </script>
+</body>
+
 </html>

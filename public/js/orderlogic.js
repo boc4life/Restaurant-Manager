@@ -48,7 +48,7 @@ $("#pizzaForm").submit(function(event){
 
     order.pizzas += 1;
     
-    $("#cart").prepend("Pizza " + pizzaNum + ": <br>Toppings: " + order["meats" + pizzaNum] + " " + order["veggies" + pizzaNum] + "<br>Price: " + order["price" + pizzaNum])
+    $("#cart").prepend("Pizza " + parseInt(pizzaNum+1) + ": <br>Toppings: " + order["meats" + pizzaNum] + " " + order["veggies" + pizzaNum] + "<br>Price: " + order["price" + pizzaNum])
     pizzaNum++
 })
 
