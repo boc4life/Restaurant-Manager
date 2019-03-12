@@ -48,3 +48,23 @@ $.get("/api/dayofweek", function(data){
         }
     });
 })
+
+$(document).on("click", "#loadReport", function(event){
+    let startDate = $("#datepickerStart").val();
+    let endDate = $("#datepickerEnd").val();
+    let dataObj = {};
+    dataObj.startDate = startDate;
+    dataObj.endDate = endDate;
+    console.log(startDate, endDate, dataObj)
+    
+    $.ajax({
+        url: "/api/dayofweek",
+        method: "POST",
+        data: {
+            startDate: startDate,
+            endDate: endDate
+        }
+    }).then(function(data){
+        console.log(data)
+    })
+})

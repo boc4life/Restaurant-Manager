@@ -35,6 +35,29 @@ app.get("/api/dayofweek", function(req, res){
     })
 })
 
+app.post("/api/dayofweek", function(req, res){
+    let startDate = parseStart(req.body.startDate);
+    let endDate = parseEnd(req.body.endDate);
+    db.Order.findAll({
+        attributes: [[db.Order.sequelize.fn("dayofweek", db.Order.sequelize.col("created_at")), "dayofweek"], "subtotal"],
+        where: {
+            created_at: 
+            {
+                $between: [startDate, endDate]
+            }  
+        }
+    }).then(function(data){
+        console.log(data)
+        let arr = [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00];
+        for (let i = 0; i < data.length; i++) {
+            arr[(data[i].dataValues.dayofweek - 1)] += parseFloat(data[i].dataValues.subtotal);
+            if (i == (data.length - 1)) {
+                res.json(arr)
+            }
+        }
+    })
+})
+
 app.get("/api/inventory", function(req, res){
     db.Ingredient.findAll({
         attributes: ["stock_quantity"]
@@ -55,3 +78,27 @@ app.get("/api/topcustomers", function(req, res){
     })
 })
 };
+
+function parseStart(startReq) {
+    let startString = startReq;
+    let startDate = "";
+    startDate += startString.substring(6,10)
+    startDate += "/"
+    startDate += startString.substring(0,2)
+    startDate += "/"
+    startDate += startString.substring(3,5)
+    startDate += " 00:00:01"
+    return startDate
+}
+
+function parseEnd(endReq) {
+    let endString = endReq;
+    let endDate = "";
+    endDate += endString.substring(6,10)
+    endDate += "/"
+    endDate += endString.substring(0,2)
+    endDate += "/"
+    endDate += endString.substring(3,5)
+    endDate += " 23:59:59";
+    return endDate
+}
