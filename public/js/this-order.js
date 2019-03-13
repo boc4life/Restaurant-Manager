@@ -44,12 +44,12 @@ $(document).ready(function() {
         for (let i = 0; i < data.Pizzas.length; i++) {
             let newPizza = $('<div style="font-weight:600">');
             newPizza.attr("data-pizza", i);
-            newPizza.append('&nbsp;&nbsp; Pizza #'+parseInt(i+1));
+            newPizza.append('&nbsp;&nbsp; Pizza #'+parseInt(i+1)+':');
             $(".orderBody").append(newPizza);
             let pizzaID = data.Pizzas[i].id
             $.get("/api/pizzas/" + pizzaID, function (toppings){
                 for (let j = 0; j < toppings.Ingredients.length; j++) {
-                    $("div[data-pizza='" + i + "'").append('&nbsp;&nbsp;&nbsp;&nbsp;' + toppings.Ingredients[j].name)
+                    $("div[data-pizza='" + i + "'").append('</br>' +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-' + toppings.Ingredients[j].name)
                 }
             })
         }
