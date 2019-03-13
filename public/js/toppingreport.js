@@ -10,7 +10,7 @@ $( function() {
 $.get("/api/toppings", function(data){
     graphData = data
 }).then(function(){
-    var myChart = new Chart(ctx, {
+    myChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ["Pepperoni", "Sausage", "Chicken", "Bacon", "Onion", "Peppers", "Mushroom", "Pineapple"],
