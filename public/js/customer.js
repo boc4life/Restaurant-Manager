@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('#customerTable').hide()
     localStorage.removeItem('customerId')
     var phoneNum = $('#phone-number');
     var firstName = $("#cus-firstName");
@@ -51,6 +52,7 @@ $(document).ready(function() {
     }
 
     $(document).on('click', '.lookup', function() {
+      $('#customerTable').show()
       $('.customer-table').empty();
       $('#placeOrder').remove();
       $('.warning').remove();
@@ -62,11 +64,19 @@ $(document).ready(function() {
         else{
           var rowsToAdd = []
           rowsToAdd.push(createCustomerRow(data))
-          $('.customer-table').prepend(rowsToAdd)
+          $('tbody').append(rowsToAdd)
           $('.button-row').append('<span id="placeOrder"><button type="submit" class="place" class="btn btn-primary mb-2">Place order</button></span>')
           localStorage.setItem('customerId', data.id)
         }
-      })
+      }).then(function() {
+        console.log('hi')
+        var table = $('#customerTable').DataTable( {
+          lengthChange: false,
+          buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+      } );
+      table.buttons().container()
+          .insertBefore( '#customerTable_filter' );
+      });
     })
 
     $(document).on('click', '.place', function() {
@@ -75,21 +85,22 @@ $(document).ready(function() {
 });
 
 function createCustomerRow(data) {
-        var newTb = $('<table class="text-center text-dark" style="width:100%; background-color:wheat">')
-        var headTr = $('<thead>')
-        headTr.append("<td>ID</td>");
-        headTr.append("<td>Phone #</td>");
-        headTr.append("<td>Firstname</td>");
-        headTr.append("<td>Lastname</td>");
-        headTr.append("<td>Address</td>");
-        headTr.append("<td>Suite#</td>");
-        headTr.append("<td>City</td>");
-        headTr.append("<td>State</td>");
-        headTr.append("<td>Zip code</td>");
-        headTr.append("<td>Notes</td>");
-        headTr.append("<td>Premium</td>");
-        headTr.append("<td>Creation date</td>");
-        var newTr = $("<tr>");
+        // var newTb = $('<table id="customerTable" class="text-center text-dark">')
+        // var headTr = $('<thead>')
+        // headTr.append("<th>ID</th>");
+        // headTr.append("<th>Phone #</th>");
+        // headTr.append("<th>Firstname</th>");
+        // headTr.append("<th>Lastname</th>");
+        // headTr.append("<th>Address</th>");
+        // headTr.append("<th>Suite#</th>");
+        // headTr.append("<th>City</th>");
+        // headTr.append("<th>State</th>");
+        // headTr.append("<th>Zip code</th>");
+        // headTr.append("<th>Notes</th>");
+        // headTr.append("<th>Premium</th>");
+        // headTr.append("<th>Creation date</th>");
+        // var newTbody = $("<tbody>");
+        var newTr = $("<tr role='row'>")
         newTr.data("customer", data);
         newTr.append("<td><a class='customerLink' data-id='"+data.id+"' href=/this-customer>" + data.id + "</a></td>");
         newTr.append("<td>" + data.phone_number + "</td>");
@@ -103,10 +114,10 @@ function createCustomerRow(data) {
         newTr.append("<td>" + data.notes + "</td>");
         newTr.append("<td>" + data.premium + "</td>");
         newTr.append("<td>" + data.created_at + "</td>");
-        newTb.append(headTr)
-        newTb.append(newTr)
-        return newTb
-        
+        // newTbody.append(newTr)
+        // newTb.append(headTr)
+        // newTb.append(newTbody)
+        return newTr
 }
 
 $(document).on('click', '.customerLink', function() {
