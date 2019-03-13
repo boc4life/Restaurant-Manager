@@ -20,6 +20,18 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/pendingorders", function(req, res) {
+    db.Order.findAll({
+      where: {
+        pending: true
+      },
+      include: [db.User, db.Pizza]
+    }).then(function(data){
+      res.json(data)
+    })
+  }
+  )
+
   app.post("/api/orders", function(req, res) {
     var request = req.body
     db.Order.create({

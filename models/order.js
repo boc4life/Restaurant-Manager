@@ -31,6 +31,10 @@ module.exports = function(sequelize, DataTypes) {
       notes: {
         type: DataTypes.TEXT,
         allowNull: true
+      },
+      pending: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
       }
     }, {underscored: true});
     Order.associate = function(models) {
