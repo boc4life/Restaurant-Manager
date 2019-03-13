@@ -7,7 +7,7 @@ html, body, section, .page {
   color:white;
   overflow: hidden;
   background-size: cover;
-  background-repeat: no-repeat;
+  overflow: auto;
 }
 
 h1 {
