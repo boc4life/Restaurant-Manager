@@ -40,6 +40,7 @@ $(document).ready(function() {
         newTr.append("<td>$" + data.total_due + "</td>");
         newTr.append("<td>" + data.payment_type + "</td>");
         $('tbody').append(newTr)
+
         for (let i = 0; i < data.Pizzas.length; i++) {
             let newPizza = $('<div style="font-weight:600">');
             newPizza.attr("data-pizza", i);
