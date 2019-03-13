@@ -1,3 +1,12 @@
+$.get("/api/inventorycheck", function(data){
+    console.log(data)
+    for (let i = 0; i< data.length; i++) {
+        if (data[i].stock_quantity <= 0) {
+            $(".topping-label[data-id='" + i + "'").css("background-color", "rgba(221, 23, 23)");
+        }
+    }
+})
+
 // We start on pizzaNum 0 and increment in the pizzaForm submit function.
 let pizzaNum = 0;
 // This is the order object that gets sent in the post request on checkout. It's currently initialized for some default values that should be made dynamic in the finished product.
