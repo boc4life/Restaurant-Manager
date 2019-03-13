@@ -35,4 +35,15 @@ module.exports = function(app) {
       res.json(dbTopping);
     });
   });
+
+  app.get("/api/inventorycheck", function(req, res){
+    db.Ingredient.findAll(
+      {
+      attributes: ["stock_quantity"]
+      }
+  ).then(function(inventory){
+    res.json(inventory)
+  })
+
+})
 };
