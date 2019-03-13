@@ -5,3 +5,18 @@
     padding:5px;
     border: 3px solid rgba(159,159,159, 0.8)
 }
+
+#headerBox {
+    margin-bottom: 1rem;
+}
+
+.reportBox {
+    height: 20rem;
+    line-height: 20rem;
+    font-size: 2rem;
+    font-weight: 300;
+    width: 20rem;
+    border: .1rem solid white;
+    color: white;
+    text-align: center;
+}
