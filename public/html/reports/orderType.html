@@ -40,17 +40,20 @@
                     <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
                     <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
                 </ul>
-                <div class="main-container">
-                    <h1>Order Type Sales Report</h1>
-                        <p>Date: <input type="text" id="datepickerStart" size="30"></p>
-                        <p>Date: <input type="text" id="datepickerEnd" size="30"></p>
-                        <button class="btn" type="button" id="loadReport">
-                        Get report
-                        </button>
-                    <div class="chart-container" style="height:400px; width: 600px;">
-                        <canvas id="myChart" width="150" height="100"></canvas>
+                <div class="main-container d-flex flex-column align-items-center">
+                        <h1>Order Type Sales Report</h1>
+                        <div class="chart-container" style="height:400px; width: 600px;">
+                            <canvas id="myChart" width="150" height="100"></canvas>
+                        </div>
                     </div>
-                </div>
+                    <div class="container">
+                        <h3>Filter Results By Date</h3>
+                    <p>Start Date: <input type="text" id="datepickerStart" size="30"></p>
+                    <p>End Date: &nbsp;<input type="text" id="datepickerEnd" size="30"></p>
+                    <button class="btn" type="button" id="loadReport">
+                        Get report
+                    </button>
+                    </div>
             </div>
         </div>
       </div>

@@ -31,7 +31,6 @@ $(document).ready(function() {
         var date = data.created_at;
         date = date.substring(0, 10);
         $('.ordDate').html(date);
-        renderPizzas()
         var newTr = $("<tr>");
         newTr.data("order", data);
         newTr.append("<td>" + data.discount + "</td>");
@@ -41,26 +40,18 @@ $(document).ready(function() {
         newTr.append("<td>$" + data.total_due + "</td>");
         newTr.append("<td>" + data.payment_type + "</td>");
         $('tbody').append(newTr)
-    }
-
-    function renderPizzas() {
-        var id=localStorage.getItem('thisOrderId');
-        var pizzaId
-        $.get('/api/pizzas/order/'+id, function(data) {
-            for(var i=0;i<data.length; i++) {
-                var jqueryString = '.i'+i
-                $('.orderBody').append('<div class="i'+i+'" style="font-weight:600">&nbsp;&nbsp; Pizza #'+parseInt(i+1)+':</div>');
-                pizzaId = data[i].id
-                $.get('/api/toppings/pizza/'+pizzaId, function(response) {
-                    console.log(jqueryString)
-                    for(var j=0; j<response.length; j++) {
-                        $.get('/api/toppings/'+ response[j].ingredient_id, function(res) {
-                            $(jqueryString).append('&nbsp;&nbsp;&nbsp;&nbsp;-'+res.name+'</br>')
-                        })
-                    }
-                })
-            }
-        })
+        for (let i = 0; i < data.Pizzas.length; i++) {
+            let newPizza = $('<div style="font-weight:600">');
+            newPizza.attr("data-pizza", i);
+            newPizza.append('&nbsp;&nbsp; Pizza #'+parseInt(i+1));
+            $(".orderBody").append(newPizza);
+            let pizzaID = data.Pizzas[i].id
+            $.get("/api/pizzas/" + pizzaID, function (toppings){
+                for (let j = 0; j < toppings.Ingredients.length; j++) {
+                    $("div[data-pizza='" + i + "'").append('&nbsp;&nbsp;&nbsp;&nbsp;' + toppings.Ingredients[j].name)
+                }
+            })
+        }
     }
     
     $(document).on('click', '.customerLink', function() {

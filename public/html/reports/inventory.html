@@ -40,11 +40,66 @@
                     <a href="/menu"><li class="icon fas fa-pizza-slice" id="tres"></li></a>
                     <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
                 </ul>
-                <div class="main-container">
-                    <h1>Inventory report</h1>
+                <div class="main-container d-flex flex-column align-items-center">
+                    <h1>Inventory report</h1><br>
                     <div class="chart-container" style="height:400px; width: 600px;">
                         <canvas id="myChart" width="150" height="100"></canvas>
                     </div>
+                </div>
+                <div class="container text-center" id="inventoryAdd">
+                    <form id="addInventoryForm" onsubmit="submitForm()">
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="pepperoni">Pepperoni</label>
+                                <input type="text" class="form-control" id="pepperoni" placeholder="# to add">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="sausage">Sausage</label>
+                                <input type="text" class="form-control" id="sausage" placeholder="# to add">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="chicken">Chicken</label>
+                                <input type="text" class="form-control" id="chicken" placeholder="# to add">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="bacon">Bacon</label>
+                                <input type="text" class="form-control" id="bacon" placeholder="# to add">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="onion">Onion</label>
+                                <input type="text" class="form-control" id="onion" placeholder="# to add">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="pepper">Pepper</label>
+                                <input type="text" class="form-control" id="pepper" placeholder="# to add">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="mushroom">Mushroom</label>
+                                <input type="text" class="form-control" id="mushroom" placeholder="# to add">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="pineapple">Pineapple</label>
+                                <input type="text" class="form-control" id="pineapple" placeholder="# to add">
+                            </div>
+                        </div>
+                        <div class = "form-row mx-auto">
+                            <div class="form-group col-md-3">
+                                <label for="dough">Dough</label>
+                                <input type="text" class="form-control" id="dough" placeholder="# to add">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="cheese">Cheese</label>
+                                <input type="text" class="form-control" id="cheese" placeholder="# to add">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="Sauce">Sauce</label>
+                                <input type="text" class="form-control" id="sauce" placeholder="# to add">
+                            </div>
+                        </div>
+                        <button type="submit">Add Inventory</button>
+                    </form>
                 </div>
             </div>
         </div>

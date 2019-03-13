@@ -14,7 +14,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Order]
+      include: [db.Order, db.Ingredient]
     }).then(function(dbPizza) {
       res.json(dbPizza);
     });

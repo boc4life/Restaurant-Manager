@@ -9,12 +9,25 @@ module.exports = function(app) {
     });
   });
 
+  app.put("/api/orderfilled", function(req, res){
+    let order = req.body.id
+    db.Order.update({
+      pending: false
+    },{
+      where: {
+        id: order
+      }
+    }).then(function(data){
+        res.json(data)
+    })
+  })
+
   app.get("/api/orders/:id", function(req, res) {
     db.Order.findOne({
       where: {
         id: req.params.id
       },
-      include: [db.User]
+      include: [db.User, db.Pizza]
     }).then(function(dbOrder) {
       res.json(dbOrder);
     });
@@ -59,7 +72,8 @@ module.exports = function(app) {
               }
             })
         })
-      } 
+      }
+      res.send("/home")
     })
   });
 };
