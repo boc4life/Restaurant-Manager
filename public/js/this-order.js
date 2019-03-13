@@ -45,17 +45,14 @@ $(document).ready(function() {
 
     function renderPizzas() {
         var id=localStorage.getItem('thisOrderId');
-        var pizzaId
         $.get('/api/pizzas/order/'+id, function(data) {
             for(var i=0;i<data.length; i++) {
-                var jqueryString = '.i'+i
-                $('.orderBody').append('<div class="i'+i+'" style="font-weight:600">&nbsp;&nbsp; Pizza #'+parseInt(i+1)+':</div>');
-                pizzaId = data[i].id
+                $('.orderBody').append('<div style="font-weight:600">&nbsp;&nbsp; Pizza #'+parseInt(i+1)+':</div>');
+                var pizzaId = data[i].id
                 $.get('/api/toppings/pizza/'+pizzaId, function(response) {
-                    console.log(jqueryString)
                     for(var j=0; j<response.length; j++) {
                         $.get('/api/toppings/'+ response[j].ingredient_id, function(res) {
-                            $(jqueryString).append('&nbsp;&nbsp;&nbsp;&nbsp;-'+res.name+'</br>')
+                            $('.orderBody').append('&nbsp;&nbsp;&nbsp;&nbsp;-'+res.name+'</br>')
                         })
                     }
                 })

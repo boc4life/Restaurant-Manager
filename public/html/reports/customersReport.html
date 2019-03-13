@@ -83,6 +83,49 @@
                             </div>
                         </div>
                         <div class="card">
+                          <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                Look up Customer
+                              </button>
+                            </h2>
+                          </div>
+                
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body customer-lookup">
+                              <div class="customer-table"></div>
+                              <table id="customerTable" class="text-dark bg-light">
+                                  <thead>
+                                      <th>ID</th>
+                                      <th>Phone #</th>
+                                      <th>Firstname</th> 
+                                      <th>Lastname</th>
+                                      <th>Address</th> 
+                                      <th>Suite</th>
+                                      <th>City</th>
+                                      <th>State</th> 
+                                      <th>Zip</th>
+                                      <th>Notes</th>
+                                      <th>Premium</th> 
+                                      <th>Date</th>
+                                  </thead>
+                                  <tbody>
+                      
+                                  </tbody>
+                              </table>
+                                <div class="form-group">
+                                   
+                                    <div class="col">
+                                      <input type="phone" class="form-control form-control-lg" id="phoneLookup" placeholder="+(732)">
+                                    </div>
+                                  </div>
+                                  <div class="col-auto button-row">
+                                    <span><button type="submit" class="lookup" class="btn btn-primary mb-2">Submit</button></span>
+                                  </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="card">
                             <div class="card-header" id="headingTwo">
                               <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -196,7 +239,7 @@
                                         </div>
                               </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
