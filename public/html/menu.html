@@ -65,7 +65,24 @@
                                     <div id="cart">
                                     </div>
                                     <div id="checkout">
+                                        Subtotal: <span id="subtotalSpan"></span><br>
+                                        Tax: <span id="taxSpan"></span><br>
+                                        Total Due: <span id="totalSpan"></span><br><br>
                                         <form id="orderSubmit">
+                                            <label for="orderType"><strong>Order Type:</strong></label>
+                                            <select class="form-control" id="orderType">
+                                                <option>Dine-In</option>
+                                                <option>Pick-Up</option>
+                                                <option>Delivery</option>
+                                                <option>In-Store</option>
+                                            </select>
+                                            <label for="paymentType"><strong>Payment Type:</strong></label>
+                                            <select class="form-control" id="paymentType">
+                                                <option>Cash</option>
+                                                <option>Credit</option>
+                                                <option>Online</option>
+                                            </select>
+                                            <br>
                                             <input id='submitOrder' type="submit" value="Submit">
                                         </form>
                                     </div>
