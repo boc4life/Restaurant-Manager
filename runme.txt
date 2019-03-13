@@ -1,3 +1,0 @@
-sequelize db:seed:all
-
-sequelize migration:generate --name addorderpending
