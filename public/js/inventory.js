@@ -52,3 +52,99 @@ $.get("/api/inventory", function(data){
         }
     });
 })
+
+// $("#addInventoryForm").submit(function(event){
+//     event.preventDefault()
+//     let pepperoni = $("#pepperoni").val();
+//     let sausage = $("#sausage").val();
+//     let chicken = $("#chicken").val();
+//     let bacon = $("#bacon").val();
+//     let onion = $("#onion").val();
+//     let pepper = $("#pepper").val();
+//     let mushroom = $("#mushroom").val();
+//     let pineapple = $("#pineapple").val();
+//     let cheese = $("#cheese").val();
+//     let dough = $("#dough").val();
+//     let sauce = $("#sauce").val();
+//     let dataObj = {
+//         1: pepperoni,
+//         2: sausage,
+//         3: chicken,
+//         4: bacon,
+//         5: onion,
+//         6: pepper,
+//         7: mushroom,
+//         8: pineapple,
+//         9: cheese,
+//         10: dough,
+//         11: sauce
+//     }
+//     console.log(dataObj)
+//     $.ajax({
+//         url: "/api/inventory", 
+//         data: dataObj,
+//         method: "POST"
+//     }).then(function(response){
+//         console.log(response)
+//         return false
+//     })
+// })
+
+function submitForm() {
+    event.preventDefault()
+    let pepperoni = $("#pepperoni").val();
+    let sausage = $("#sausage").val();
+    let chicken = $("#chicken").val();
+    let bacon = $("#bacon").val();
+    let onion = $("#onion").val();
+    let pepper = $("#pepper").val();
+    let mushroom = $("#mushroom").val();
+    let pineapple = $("#pineapple").val();
+    let cheese = $("#cheese").val();
+    let dough = $("#dough").val();
+    let sauce = $("#sauce").val();
+    pepperoni = emptyCheck(pepperoni);
+    sausage = emptyCheck(sausage);
+    chicken = emptyCheck(chicken);
+    bacon = emptyCheck(bacon);
+    onion = emptyCheck(onion);
+    pepper = emptyCheck(pepper);
+    mushroom = emptyCheck(mushroom);
+    pineapple = emptyCheck(pineapple);
+    cheese = emptyCheck(cheese);
+    dough = emptyCheck(dough);
+    sauce = emptyCheck(sauce);
+    if (isNaN(pepperoni) == true || isNaN(sausage) == true || isNaN(chicken) == true || isNaN(bacon) == true || isNaN(onion) == true || isNaN(pepper) == true || isNaN(mushroom) == true || isNaN(pineapple) == true || isNaN(dough) == true || isNaN(cheese) == true || isNaN(sauce) == true) {
+        alert("Number values only please")
+    }
+    let dataObj = {
+        pepperoni: pepperoni,
+        sausage: sausage,
+        chicken: chicken,
+        bacon: bacon,
+        onion: onion,
+        pepper: pepper,
+        mushroom: mushroom,
+        pineapple: pineapple,
+        cheese: cheese,
+        dough: dough,
+        sauce: sauce
+    }
+    console.log(dataObj)
+    $.ajax({
+        url: "/api/inventory", 
+        data: dataObj,
+        method: "POST"
+    }).then(function(response){
+        location.reload()
+    })
+}
+
+function emptyCheck(parameter) {
+    if (parameter == "") {
+        return parameter = 0
+    }
+    else {
+        return parameter = parameter
+    }
+}

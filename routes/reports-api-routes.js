@@ -94,6 +94,20 @@ app.get("/api/inventory", function(req, res){
     })
 })
 
+app.post("/api/inventory", function(req, res){
+    res.end("Received")
+    let ingredientArr = Object.keys(req.body)
+    let valuesArr = Object.values(req.body)
+    for (let i = 0; i < valuesArr.length; i++) {
+    db.Ingredient.increment("stock_quantity", {
+        by: valuesArr[i],
+        where: {
+            name: ingredientArr[i]
+        }
+    })
+    }
+})
+
 app.get("/api/topcustomers", function(req, res){
     db.Order.findAll({
         attributes: ["user_id", [db.Order.sequelize.fn("sum", db.Order.sequelize.col("subtotal")), "total"]],
