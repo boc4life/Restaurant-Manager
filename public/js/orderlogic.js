@@ -59,6 +59,7 @@ $("#pizzaForm").submit(function(event){
 
 // "Checkout" function triggered when clicking submit button on top of page.
 $("#orderSubmit").submit(function(event){
+    event.preventDefault();
     localStorage.removeItem('customerId');
     var orderType = $("#orderType").val();
     var paymentType = $("#paymentType").val();
@@ -70,6 +71,6 @@ $("#orderSubmit").submit(function(event){
         type: "POST",
         data: order
     }).then(function(response){
-        console.log("Order Posted");
+        window.location = response
     })
 })

@@ -6,8 +6,9 @@ $.get("/api/pendingorders", function(response){
         let orderType = $("<h5 class='card-title'>");
         let user = $("<h4 class='card-subtitle'>");
         let pizzas = $("<p>");
-        let button = $("<button>");
+        let button = $("<button class='fulfillButton'>");
         button.attr("data-id", response[i].id);
+        newDiv.attr("data-id", response[i].id);
         button.text("Order Filled")
         orderType.append(response[i].type);
         user.append(response[i].User.first_name + " " + response[i].User.last_name + "<br>" + response[i].User.phone_number);
@@ -17,3 +18,18 @@ $.get("/api/pendingorders", function(response){
         $("#pendingOrders").append(newDiv)
     }
 })
+
+$(document).on("click", ".fulfillButton", fulfillOrder)
+
+function fulfillOrder() {
+    let orderID = $(this).attr("data-id");
+    let dataObj = {id: orderID}
+    
+    $.ajax({
+        url: "/api/orderfilled",
+        method: "PUT",
+        data: dataObj
+    }).then(function(response){
+        $('div[data-id="' + orderID + '"]').remove();
+    })
+}

@@ -94,6 +94,20 @@ app.get("/api/inventory", function(req, res){
     })
 })
 
+app.post("/api/inventory", function(req, res){
+    res.end("Received")
+    let ingredientArr = Object.keys(req.body)
+    let valuesArr = Object.values(req.body)
+    for (let i = 0; i < valuesArr.length; i++) {
+    db.Ingredient.increment("stock_quantity", {
+        by: valuesArr[i],
+        where: {
+            name: ingredientArr[i]
+        }
+    })
+    }
+})
+
 app.get("/api/topcustomers", function(req, res){
     db.Order.findAll({
         attributes: ["user_id", [db.Order.sequelize.fn("sum", db.Order.sequelize.col("subtotal")), "total"]],
@@ -126,6 +140,21 @@ app.post("/api/ordertype", function(req, res){
             {
                 $between: [startDate, endDate]
             }  
+        }
+    }).then(function(data){
+        res.json(data)
+    })
+})
+
+app.post("/api/orders/daterangelookup", function(req, res) {
+    let startDate = parseStart(req.body.startDate);
+    let endDate = parseEnd(req.body.endDate);
+    db.Order.findAll({
+        where: {
+            created_at:
+            {
+                $between: [startDate, endDate]
+            }
         }
     }).then(function(data){
         res.json(data)
