@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var orderList = $("tbody");
     var orderContainer = $(".order-container");
-
     getOrders()
 
     function getOrders() {
@@ -16,8 +15,6 @@ $(document).ready(function() {
             lengthChange: false,
             buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
         } );
-        
-     
         table.buttons().container()
             .insertBefore( '#orderTable_filter' );
         });
