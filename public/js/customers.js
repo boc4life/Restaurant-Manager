@@ -11,7 +11,16 @@ $(document).ready(function() {
             rowsToAdd.push(createCustomerRow(data[i]));
           }
           renderCustomerList(rowsToAdd);
-        });
+        }).then(function() {
+          var table = $('#customersTable').DataTable( {
+            lengthChange: false,
+            buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+        } );
+        
+     
+        table.buttons().container()
+            .insertBefore( '#customersTable_filter' );
+        });;
       }
     function createCustomerRow(data) {
         var newTr = $("<tr>");
