@@ -18,11 +18,11 @@ $(document).ready(function() {
         newTr.data("order", data);
         newTr.append("<td><a class='orderLink' data-id='"+data.id+"' href=/this-order>" + data.id + "</a></td>");
         newTr.append("<td>" + data.type + "</td>");
-        newTr.append("<td>" + data.discount + "</td>");
-        newTr.append("<td>" + data.subtotal + "</td>");
-        newTr.append("<td>" + data.tax + "</td>");
-        newTr.append("<td>" + data.tip + "</td>");
-        newTr.append("<td>" + data.total_due + "</td>");
+        newTr.append("<td>$" + data.discount + "</td>");
+        newTr.append("<td>$" + data.subtotal + "</td>");
+        newTr.append("<td>$" + data.tax + "</td>");
+        newTr.append("<td>$" + data.tip + "</td>");
+        newTr.append("<td>$" + data.total_due + "</td>");
         newTr.append("<td>" + data.payment_type + "</td>");
         newTr.append("<td>" + data.notes + "</td>");
         var date = data.created_at;
