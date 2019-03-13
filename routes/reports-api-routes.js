@@ -114,6 +114,23 @@ app.get("/api/ordertype", function(req, res){
         res.json(data)
     })
 })
+
+app.post("/api/ordertype", function(req, res){
+    let startDate = parseStart(req.body.startDate);
+    let endDate = parseEnd(req.body.endDate);
+    db.Order.findAll({
+        attributes: ["type", [db.Order.sequelize.fn("sum", db.Order.sequelize.col("subtotal")), "total"]],
+        group: ["type"],
+        where: {
+            created_at: 
+            {
+                $between: [startDate, endDate]
+            }  
+        }
+    }).then(function(data){
+        res.json(data)
+    })
+})
 };
 
 function parseStart(startReq) {

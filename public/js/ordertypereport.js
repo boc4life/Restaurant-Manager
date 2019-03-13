@@ -62,8 +62,18 @@ $(document).on("click", "#loadReport", function(event){
             startDate: startDate,
             endDate: endDate
         }
-    }).then(function(response){
-        myChart.config.data.datasets[0].data = response;
-        myChart.update();
+    }).then(function(data){
+        labelsArr = [];
+        dataArr = [];
+        for (let i = 0; i < data.length; i++) {
+            let arr = Object.values(data[i]);
+            labelsArr.push(arr[0]);
+            dataArr.push(arr[1]);
+            if (i == (data.length - 1)){
+                myChart.config.data.datasets[0].data = dataArr;
+                myChart.config.labels = labelsArr;
+                myChart.update();
+            }
+        }
     })
 })
