@@ -145,6 +145,21 @@ app.post("/api/ordertype", function(req, res){
         res.json(data)
     })
 })
+
+app.post("/api/orders/daterangelookup", function(req, res) {
+    let startDate = parseStart(req.body.startDate);
+    let endDate = parseEnd(req.body.endDate);
+    db.Order.findAll({
+        where: {
+            created_at:
+            {
+                $between: [startDate, endDate]
+            }
+        }
+    }).then(function(data){
+        res.json(data)
+    })
+})
 };
 
 function parseStart(startReq) {

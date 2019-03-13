@@ -53,7 +53,7 @@
                                       </div>
                                     </div>
                                     <div class="col-auto">
-                                      <button type="submit" class="lookup" class="btn btn-primary mb-2">Submit</button>
+                                      <button type="submit" class="lookup" id="singleOrderLookup" class="btn btn-primary mb-2">Submit</button>
                                     </div>
                               </div>
                             </div>
@@ -69,9 +69,9 @@
                         
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                               <div class="card-body">
-                                    <p>Date: <input type="text" id="datepickerStart" size="30"></p>
-                                    <p>Date: <input type="text" id="datepickerEnd" size="30"></p>
-                                    <button class="btn" type="button" id="loadReport">
+                                    <p>Start Date: <input type="text" id="datepickerStart" size="30"></p>
+                                    <p>End Date: <input type="text" id="datepickerEnd" size="30"></p>
+                                    <button class="btn" type="button" id="dateRangeLookup">
                                     Get report
                                     </button>
                               </div>
@@ -89,5 +89,6 @@
     $( "#datepickerEnd" ).datepicker();
     } );
     </script>
+    <script type="text/javascript" src="./../../js/orderlookup.js"></script>
       </body>
 </html>
