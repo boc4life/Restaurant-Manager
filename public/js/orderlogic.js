@@ -2,7 +2,7 @@
 let pizzaNum = 0;
 // This is the order object that gets sent in the post request on checkout. It's currently initialized for some default values that should be made dynamic in the finished product.
 let order = {
-    user_id: localStorage.getItem('customerId'),
+    user_id: localStorage.getItem("customerId"),
     pizzas: 0,
     type: "Pickup",
     discount: 0,
@@ -43,19 +43,28 @@ $("#pizzaForm").submit(function(event){
     order["veggies" + pizzaNum] = veggies;
     order["price" + pizzaNum] = price;
     order.subtotal += parseInt(price)
-    order.tax = order.subtotal * .06
+    order.tax = parseFloat(order.subtotal * .06).toFixed(2)
     order.total_due = parseInt(order.subtotal) + parseFloat(order.tax);
+    order.total_due.toFixed(2);
 
     order.pizzas += 1;
     console.log(order)
     
-    $("#cart").append("Pizza " + parseInt(pizzaNum+1) + ": <br>Toppings: " + order["meats" + pizzaNum] + " " + order["veggies" + pizzaNum] + "<br>Price: " + order["price" + pizzaNum] + "<br>")
+    $("#cart").append("<strong>Pizza " + parseInt(pizzaNum+1) + ":</strong> " + order["meats" + pizzaNum] + " " + order["veggies" + pizzaNum] + "<br>Price: " + order["price" + pizzaNum] + "<br>")
+    $("#subtotalSpan").html(order.subtotal);
+    $("#taxSpan").html(order.tax);
+    $("#totalSpan").html(order.total_due)
     pizzaNum++
 })
 
 // "Checkout" function triggered when clicking submit button on top of page.
 $("#orderSubmit").submit(function(event){
     localStorage.removeItem('customerId');
+    var orderType = $("#orderType").val();
+    var paymentType = $("#paymentType").val();
+    order.type = orderType;
+    order.payment_type = paymentType
+
     $('.customerDiv').empty()
     $.ajax("/api/orders", {
         type: "POST",
