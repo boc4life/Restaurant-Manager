@@ -16,7 +16,7 @@
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
-        <script type="text/javascript" src="./../../js/salesreport.js"></script>
+        <script type="text/javascript" src="./../../js/ordertypereport.js"></script>
         <title>PizzaLovers</title>
     </head>
     <body style="background-image: url(../../images/bannerpizza2.jpg);">
@@ -41,25 +41,14 @@
                     <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
                 </ul>
                 <div class="main-container">
-                    <div class="container-fluid d-flex justify-content-center" id="headerBox">
-                        <h1>Sales Reports</h1>
-                    </div>
-                    <div class="boxContainer d-flex flex-wrap justify-content-center">
-                        <a href="/topping-report">
-                        <div class="reportBox">
-                            Topping Report
-                        </div>
-                        </a>
-                        <a href="/dayofweek">
-                        <div class="reportBox">
-                            Day of Week Sales
-                        </div>
-                        </a>
-                        <a href="/ordertype">
-                        <div class="reportBox">
-                            Sales By Order Type
-                        </div>
-                        </a>
+                    <h1>Order Type Sales Report</h1>
+                        <p>Date: <input type="text" id="datepickerStart" size="30"></p>
+                        <p>Date: <input type="text" id="datepickerEnd" size="30"></p>
+                        <button class="btn" type="button" id="loadReport">
+                        Get report
+                        </button>
+                    <div class="chart-container" style="height:400px; width: 600px;">
+                        <canvas id="myChart" width="150" height="100"></canvas>
                     </div>
                 </div>
             </div>
