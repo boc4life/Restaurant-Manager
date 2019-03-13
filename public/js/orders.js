@@ -11,10 +11,19 @@ $(document).ready(function() {
             rowsToAdd.push(createOrderRow(data[i]));
           }
           renderOrderList(rowsToAdd);
+        }).then(function() {
+          var table = $('#orderTable').DataTable( {
+            lengthChange: false,
+            buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+        } );
+        
+     
+        table.buttons().container()
+            .insertBefore( '#orderTable_filter' );
         });
       }
     function createOrderRow(data) {
-        var newTr = $("<tr>");
+        var newTr = $("<tr role='row'>");
         newTr.data("order", data);
         newTr.append("<td><a class='orderLink' data-id='"+data.id+"' href=/this-order>" + data.id + "</a></td>");
         newTr.append("<td>" + data.type + "</td>");

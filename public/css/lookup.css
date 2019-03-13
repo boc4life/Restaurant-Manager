@@ -10,7 +10,7 @@ html, body, section, .page {
     background-repeat: no-repeat;
   }
 body {
-  overflow: scroll;
+  overflow: auto;;
 }
     .page {
       color: white;

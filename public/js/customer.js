@@ -19,6 +19,9 @@ $(document).ready(function() {
       if (phoneNum.startsWith('1 ', 0)) {
         phoneNum = phoneNum.replace(/1 /g, "")
       }
+      if (phoneNum.startsWith('+1 ', 0)) {
+        phoneNum = phoneNum.replace(/\+1 /g, "")
+      }
       phoneNum = phoneNum.replace(/\(/g, "");
       phoneNum = phoneNum.replace(/\)/g, "");
       phoneNum = phoneNum.replace(/\-/g, "");
