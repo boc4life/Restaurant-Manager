@@ -22,8 +22,10 @@ app.get("/api/toppings", function(req, res){
 })
 
 app.post("/api/toppings", function(req, res){
-    let startDate = parseStart(req.body.startDate);
-    let endDate = parseEnd(req.body.endDate);
+    let startTime = req.body.startTime
+    let endTime = req.body.endTime
+    let startDate = parseStart(req.body.startDate, startTime);
+    let endDate = parseEnd(req.body.endDate, endTime);
     db.PizzaToppings.findAll({
         attributes: ["ingredient_id"],
         where: {
@@ -64,8 +66,8 @@ app.get("/api/dayofweek", function(req, res){
 })
 
 app.post("/api/dayofweek", function(req, res){
-    let startTime = req.body.startTime
-    let endTime = req.body.endTime
+    let startTime = req.body.startTime;
+    let endTime = req.body.endTime;
     let startDate = parseStart(req.body.startDate, startTime);
     let endDate = parseEnd(req.body.endDate, endTime);
     console.log(startTime + ' ' + endTime)
