@@ -64,8 +64,11 @@ app.get("/api/dayofweek", function(req, res){
 })
 
 app.post("/api/dayofweek", function(req, res){
-    let startDate = parseStart(req.body.startDate);
-    let endDate = parseEnd(req.body.endDate);
+    let startTime = req.body.startTime
+    let endTime = req.body.endTime
+    let startDate = parseStart(req.body.startDate, startTime);
+    let endDate = parseEnd(req.body.endDate, endTime);
+    console.log(startTime + ' ' + endTime)
     db.Order.findAll({
         attributes: [[db.Order.sequelize.fn("dayofweek", db.Order.sequelize.col("created_at")), "dayofweek"], "subtotal"],
         where: {
@@ -130,8 +133,11 @@ app.get("/api/ordertype", function(req, res){
 })
 
 app.post("/api/ordertype", function(req, res){
-    let startDate = parseStart(req.body.startDate);
-    let endDate = parseEnd(req.body.endDate);
+    let startTime = req.body.startTime
+    let endTime = req.body.endTime
+    let startDate = parseStart(req.body.startDate, startTime);
+    let endDate = parseEnd(req.body.endDate, endTime);
+    console.log(startDate + ' ' + endDate)
     db.Order.findAll({
         attributes: ["type", [db.Order.sequelize.fn("sum", db.Order.sequelize.col("subtotal")), "total"]],
         group: ["type"],
@@ -162,7 +168,7 @@ app.post("/api/orders/daterangelookup", function(req, res) {
 })
 };
 
-function parseStart(startReq) {
+function parseStart(startReq, startTime) {
     let startString = startReq;
     let startDate = "";
     startDate += startString.substring(6,10)
@@ -170,11 +176,12 @@ function parseStart(startReq) {
     startDate += startString.substring(0,2)
     startDate += "/"
     startDate += startString.substring(3,5)
-    startDate += " 00:00:01"
+    startDate += " "
+    startDate += startTime
     return startDate
 }
 
-function parseEnd(endReq) {
+function parseEnd(endReq, endTime) {
     let endString = endReq;
     let endDate = "";
     endDate += endString.substring(6,10)
@@ -182,6 +189,7 @@ function parseEnd(endReq) {
     endDate += endString.substring(0,2)
     endDate += "/"
     endDate += endString.substring(3,5)
-    endDate += " 23:59:59";
+    endDate += " "
+    endDate += endTime;
     return endDate
 }

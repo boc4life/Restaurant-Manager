@@ -7,6 +7,16 @@ let dataArr = [];
 $( function() {
     $( "#datepickerStart" ).datepicker();
     $( "#datepickerEnd" ).datepicker();
+    $( "#timepickerStart" ).timepicker({    timeFormat: 'H:i:s',
+                                            minTime: '08:00:00',
+                                            maxTime: '22:30:00',
+                                            'scrollDefault': 'now'
+                                        });
+    $( "#timepickerEnd" ).timepicker({      timeFormat: 'H:i:s',
+                                            minTime: '08:00:00',
+                                            maxTime: '22:30:00',
+                                            'scrollDefault': 'now'
+                                        });
   } );
 
 $.get("/api/ordertype", function(data){
@@ -16,8 +26,43 @@ $.get("/api/ordertype", function(data){
         dataArr.push(arr[1]);
     }
 }).then(function(){
+    createChart(ctx)
+    console.log(myChart)
+})
+
+$(document).on("click", "#loadReport", function(event){
+    let startDate = $("#datepickerStart").val();
+    let endDate = $("#datepickerEnd").val();
+    let startTime = $('#timepickerStart').val();
+    let endTime = $('#timepickerEnd').val();
+        $.ajax({
+        url: "/api/ordertype",
+        method: "POST",
+        data: {
+            startDate: startDate,
+            startTime: startTime,
+            endDate: endDate,
+            endTime: endTime
+        }
+    }).then(function(data){
+        console.log(data)
+        labelsArr = [];
+        dataArr = [];
+        for (let i = 0; i < data.length; i++) {
+            let arr = Object.values(data[i]);
+            labelsArr.push(arr[0]);
+            dataArr.push(arr[1]);
+            if (i == (data.length - 1)){
+                myChart.destroy();
+                createChart(ctx)
+            }
+        }
+    })
+})
+
+createChart = function(ctx) {
     myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'pie',
         data: {
             labels: labelsArr,
             datasets: [{
@@ -48,32 +93,4 @@ $.get("/api/ordertype", function(data){
             }
         }
     });
-    console.log(myChart)
-})
-
-$(document).on("click", "#loadReport", function(event){
-    let startDate = $("#datepickerStart").val();
-    let endDate = $("#datepickerEnd").val();
-    
-    $.ajax({
-        url: "/api/ordertype",
-        method: "POST",
-        data: {
-            startDate: startDate,
-            endDate: endDate
-        }
-    }).then(function(data){
-        labelsArr = [];
-        dataArr = [];
-        for (let i = 0; i < data.length; i++) {
-            let arr = Object.values(data[i]);
-            labelsArr.push(arr[0]);
-            dataArr.push(arr[1]);
-            if (i == (data.length - 1)){
-                myChart.config.data.datasets[0].data = dataArr;
-                myChart.config.labels = labelsArr;
-                myChart.update();
-            }
-        }
-    })
-})
+}
