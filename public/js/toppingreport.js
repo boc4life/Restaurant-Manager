@@ -31,8 +31,6 @@ $(document).on("click", "#loadReport", function(event){
     let dataObj = {};
     dataObj.startDate = startDate;
     dataObj.endDate = endDate;
-    console.log(startDate, endDate, dataObj)
-    
     $.ajax({
         url: "/api/toppings",
         method: "POST",

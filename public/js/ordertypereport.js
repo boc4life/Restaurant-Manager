@@ -27,7 +27,6 @@ $.get("/api/ordertype", function(data){
     }
 }).then(function(){
     createChart(ctx)
-    console.log(myChart)
 })
 
 $(document).on("click", "#loadReport", function(event){
@@ -45,7 +44,6 @@ $(document).on("click", "#loadReport", function(event){
             endTime: endTime
         }
     }).then(function(data){
-        console.log(data)
         labelsArr = [];
         dataArr = [];
         for (let i = 0; i < data.length; i++) {

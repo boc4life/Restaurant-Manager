@@ -70,7 +70,6 @@ app.post("/api/dayofweek", function(req, res){
     let endTime = req.body.endTime;
     let startDate = parseStart(req.body.startDate, startTime);
     let endDate = parseEnd(req.body.endDate, endTime);
-    console.log(startTime + ' ' + endTime)
     db.Order.findAll({
         attributes: [[db.Order.sequelize.fn("dayofweek", db.Order.sequelize.col("created_at")), "dayofweek"], "subtotal"],
         where: {

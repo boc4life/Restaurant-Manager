@@ -9,7 +9,6 @@ $(document).ready(function() {
         });
       }
     function renderCustomer(data) {
-        console.log(data);
         $('.id').html("<a class='customerLink' data-id='"+data.User.id+"' href=/this-customer>" + data.User.id + "</a>")
         $('.phone').html(data.User.phone_number);
         $('.firstname').html(data.User.first_name + " ");

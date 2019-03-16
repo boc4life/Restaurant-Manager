@@ -60,7 +60,6 @@ $(document).ready(function() {
           localStorage.setItem('customerId', data.id)
         }
       }).then(function() {
-        console.log('hi')
         var table = $('#customerTable').DataTable( {
           lengthChange: false,
           buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]

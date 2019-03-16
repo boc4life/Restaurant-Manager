@@ -3,7 +3,6 @@ let graphData;
 
 $.get("/api/inventory", function(data){
     graphData = data.map(a => a.stock_quantity);
-    console.log(graphData)
 }).then(function(){
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -52,43 +51,6 @@ $.get("/api/inventory", function(data){
         }
     });
 })
-
-// $("#addInventoryForm").submit(function(event){
-//     event.preventDefault()
-//     let pepperoni = $("#pepperoni").val();
-//     let sausage = $("#sausage").val();
-//     let chicken = $("#chicken").val();
-//     let bacon = $("#bacon").val();
-//     let onion = $("#onion").val();
-//     let pepper = $("#pepper").val();
-//     let mushroom = $("#mushroom").val();
-//     let pineapple = $("#pineapple").val();
-//     let cheese = $("#cheese").val();
-//     let dough = $("#dough").val();
-//     let sauce = $("#sauce").val();
-//     let dataObj = {
-//         1: pepperoni,
-//         2: sausage,
-//         3: chicken,
-//         4: bacon,
-//         5: onion,
-//         6: pepper,
-//         7: mushroom,
-//         8: pineapple,
-//         9: cheese,
-//         10: dough,
-//         11: sauce
-//     }
-//     console.log(dataObj)
-//     $.ajax({
-//         url: "/api/inventory", 
-//         data: dataObj,
-//         method: "POST"
-//     }).then(function(response){
-//         console.log(response)
-//         return false
-//     })
-// })
 
 function submitForm() {
     event.preventDefault()
