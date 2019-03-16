@@ -10,12 +10,14 @@
         <link href="../../css/orders.css" rel="stylesheet">
         <link href="../../css/reports.css" rel="stylesheet">
         <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/jquery-ui.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css" rel="stylesheet">
         <!--favicon-->
         <link rel="short icon" href="../../images/icon.png" type="image/icon">
         <!--JavaScript-->
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
         <script type="text/javascript" src="./../../js/dayofweekreport.js"></script>
         <title>PizzaLovers</title>
     </head>
@@ -26,7 +28,7 @@
       <div class="ct" id="t2">
         <div class="ct" id="t3">
             <div class="ct" id="t4">
-                <ul>
+                <ul class="sideBar">
                     <a href="/home"><li class="icon fa fa-home" id="uno"></li></a>
                     <a href="/order"><li class="icon fas fa-pizza-slice" id="dos"></li></a>
                     <a href="/sign-in"><li class="icon fas fa-key" id="cuatro"></li></a>
@@ -39,8 +41,8 @@
                 </div>
                 <div class="container">
                     <h3>Filter Results By Date</h3>
-                <p>Start Date: <input type="text" id="datepickerStart" size="30"></p>
-                <p>End Date: &nbsp;<input type="text" id="datepickerEnd" size="30"></p>
+                    <p><span>Start Date: <input type="text" id="datepickerStart" size="30"></span>&nbsp;&nbsp;<span>Start Time: <input type="text" id="timepickerStart" size="30" value="08:00:00"></span></p>
+                    <p><span>End Date: &nbsp;<input type="text" id="datepickerEnd" size="30"></span>&nbsp;&nbsp;<span>Start Time: <input type="text" id="timepickerEnd" size="30" value="22:30:00"></span></p>
                 <button class="btn" type="button" id="loadReport">
                     Get report
                 </button>

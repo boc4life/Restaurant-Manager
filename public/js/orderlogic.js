@@ -1,5 +1,4 @@
 $.get("/api/inventorycheck", function(data){
-    console.log(data)
     for (let i = 0; i< data.length; i++) {
         if (data[i].stock_quantity <= 0) {
             $(".topping-label[data-id='" + i + "'").css("background-color", "rgba(221, 23, 23)");
@@ -55,10 +54,7 @@ $("#pizzaForm").submit(function(event){
     order.tax = parseFloat(order.subtotal * .06).toFixed(2)
     order.total_due = parseInt(order.subtotal) + parseFloat(order.tax);
     order.total_due.toFixed(2);
-
     order.pizzas += 1;
-    console.log(order)
-    
     $("#cart").append("<strong>Pizza " + parseInt(pizzaNum+1) + ":</strong> " + order["meats" + pizzaNum] + " " + order["veggies" + pizzaNum] + "<br>Price: " + order["price" + pizzaNum] + "<br>")
     $("#subtotalSpan").html(order.subtotal);
     $("#taxSpan").html(order.tax);

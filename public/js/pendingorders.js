@@ -1,5 +1,4 @@
 $.get("/api/pendingorders", function(response){
-    console.log(response)
     for (let i = 0; i < response.length; i++) {
         let newDiv = $("<div class='card orderPending'>");
         let cardBody = $("<div class='card-body'>");

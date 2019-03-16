@@ -5,11 +5,49 @@ let myChart;
 $( function() {
     $( "#datepickerStart" ).datepicker();
     $( "#datepickerEnd" ).datepicker();
+    $( "#timepickerStart" ).timepicker({    timeFormat: 'H:i:s',
+                                            minTime: '08:00:00',
+                                            maxTime: '22:30:00',
+                                            'scrollDefault': 'now'
+                                        });
+    $( "#timepickerEnd" ).timepicker({      timeFormat: 'H:i:s',
+                                            minTime: '08:00:00',
+                                            maxTime: '22:30:00',
+                                            'scrollDefault': 'now'
+                                        });
   } );
 
 $.get("/api/toppings", function(data){
     graphData = data
 }).then(function(){
+    createChart(ctx)
+})
+
+$(document).on("click", "#loadReport", function(event){  
+    let startDate = $("#datepickerStart").val();
+    let endDate = $("#datepickerEnd").val();
+    let startTime = $('#timepickerStart').val();
+    let endTime = $('#timepickerEnd').val();
+    let dataObj = {};
+    dataObj.startDate = startDate;
+    dataObj.endDate = endDate;
+    $.ajax({
+        url: "/api/toppings",
+        method: "POST",
+        data: {
+            startDate: startDate,
+            startTime: startTime,
+            endDate: endDate,
+            endTime: endTime
+        }
+    }).then(function(response){
+        graphData = response;
+        myChart.destroy();
+        createChart(ctx)
+    })
+})
+
+let createChart = function(ctx) {
     myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -50,25 +88,4 @@ $.get("/api/toppings", function(data){
             }
         }
     });
-})
-
-$(document).on("click", "#loadReport", function(event){
-    let startDate = $("#datepickerStart").val();
-    let endDate = $("#datepickerEnd").val();
-    let dataObj = {};
-    dataObj.startDate = startDate;
-    dataObj.endDate = endDate;
-    console.log(startDate, endDate, dataObj)
-    
-    $.ajax({
-        url: "/api/toppings",
-        method: "POST",
-        data: {
-            startDate: startDate,
-            endDate: endDate
-        }
-    }).then(function(response){
-        myChart.config.data.datasets[0].data = response;
-        myChart.update();
-    })
-})
+}

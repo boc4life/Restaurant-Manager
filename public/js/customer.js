@@ -27,7 +27,6 @@ $(document).ready(function() {
       phoneNum = phoneNum.replace(/\)/g, "");
       phoneNum = phoneNum.replace(/\-/g, "");
       phoneNum = phoneNum.replace(/\ /g, "");
-      console.log('submit')
       upsertCustomer({
         phone_number: phoneNum.trim(),
         first_name: firstName.val(),
@@ -69,7 +68,6 @@ $(document).ready(function() {
           localStorage.setItem('customerId', data.id)
         }
       }).then(function() {
-        console.log('hi')
         var table = $('#customerTable').DataTable( {
           lengthChange: false,
           buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
@@ -85,21 +83,6 @@ $(document).ready(function() {
 });
 
 function createCustomerRow(data) {
-        // var newTb = $('<table id="customerTable" class="text-center text-dark">')
-        // var headTr = $('<thead>')
-        // headTr.append("<th>ID</th>");
-        // headTr.append("<th>Phone #</th>");
-        // headTr.append("<th>Firstname</th>");
-        // headTr.append("<th>Lastname</th>");
-        // headTr.append("<th>Address</th>");
-        // headTr.append("<th>Suite#</th>");
-        // headTr.append("<th>City</th>");
-        // headTr.append("<th>State</th>");
-        // headTr.append("<th>Zip code</th>");
-        // headTr.append("<th>Notes</th>");
-        // headTr.append("<th>Premium</th>");
-        // headTr.append("<th>Creation date</th>");
-        // var newTbody = $("<tbody>");
         var newTr = $("<tr role='row'>")
         newTr.data("customer", data);
         newTr.append("<td><a class='customerLink' data-id='"+data.id+"' href=/this-customer>" + data.id + "</a></td>");
@@ -114,9 +97,6 @@ function createCustomerRow(data) {
         newTr.append("<td>" + data.notes + "</td>");
         newTr.append("<td>" + data.premium + "</td>");
         newTr.append("<td>" + data.created_at + "</td>");
-        // newTbody.append(newTr)
-        // newTb.append(headTr)
-        // newTb.append(newTbody)
         return newTr
 }
 

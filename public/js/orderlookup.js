@@ -10,7 +10,6 @@ function singleOrderLookup() {
     $('#orderTable').show()
     $('.warning').remove();
     let orderNum = $("#orderLookup").val()
-    console.log(orderNum)
     if (isNaN(orderNum)) {
         return false
     }
@@ -21,7 +20,6 @@ function singleOrderLookup() {
             }
             else{
                 $('#orderTable_wrapper').show();
-                console.log(data);
                 var rowsToAdd = []
                 rowsToAdd.push(createOrderRow(data))
                 $('#orderTable tbody').append(rowsToAdd)
@@ -54,7 +52,6 @@ function dateRangeLookup() {
         }
     }).then(function(response){
         $('#ordersTable_wrapper').show();
-                console.log(response);
                 var rowsToAdd = []
                 for (var i = 0; i < response.length; i++) {
                     rowsToAdd.push(createOrdersRow(response[i]));

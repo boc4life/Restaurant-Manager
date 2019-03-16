@@ -2,9 +2,7 @@ $(document).ready(function() {
       var id=localStorage.getItem('customerId')
       if(id==null){console.log('you need to pick a customer')}
       else{
-          console.log(id)
           $.get("/api/users/id/"+id, function(data) {
-              console.log(data)
             var rowsToAdd = []
             rowsToAdd.push(createCustomerRow(data))
             $('.customerDiv').prepend(rowsToAdd)

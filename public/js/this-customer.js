@@ -34,7 +34,6 @@ $(document).ready(function() {
     }
 
     function createOrderRow(data) {
-        console.log(data)
         var newTr = $("<tr>");
         newTr.data("order", data);
         newTr.append("<td><a class='orderLink' data-id='"+data.id+"' href=/this-order>" + data.id + "</a></td>");
